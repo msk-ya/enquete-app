@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @enquete.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @enquete.content %>
+</p>
+
+<%= link_to 'Edit', edit_enquete_path(@enquete) %> |
+<%= link_to 'Back', enquetes_path %>
