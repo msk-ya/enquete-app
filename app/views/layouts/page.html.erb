@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="header-left">
+          <li>HOME</li>
+          <li>アンケート一覧</li>
+          <li>新着アンケート</li>
+        </ul>
+        <ul class="header-right">
+          <li>ログイン</li>
+        </ul>
+      </nav>
+      <img src="/custom.jpg" alt="header-img" class="header-img">
+    </header>
+    
+    <main class="page-main">
+       <article class="page-article">
+          <%= yield %>
+       </article>
+
+       <aside class="page-aside">
+          <%= render "/pages/side" %>
+       </aside>
+    </main>
+  </body>
+</html>

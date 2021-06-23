@@ -1,3 +1,20 @@
-// Place all the styles related to the enquetes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.tr-questions{
+  display: none;
+  ul{
+    background-color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    ;
+    
+    li{
+      padding: 50px 0;
+      border: 1px solid #444;
+      font-weight: bold;
+      background-color: #fff;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+      }
+    }
+}

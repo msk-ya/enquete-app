@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_142019) do
+ActiveRecord::Schema.define(version: 2021_06_02_004854) do
 
   create_table "enquetes", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_05_26_142019) do
     t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "title"
+    t.integer "form_type", default: 0
     t.index ["question_id"], name: "index_forms_on_question_id"
   end
 
@@ -33,6 +35,18 @@ ActiveRecord::Schema.define(version: 2021_05_26_142019) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["enquete_id"], name: "index_questions_on_enquete_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.text "text_title"
+    t.text "select_title"
+    t.text "content"
+    t.text "select"
+    t.text "form_types"
+    t.integer "enquete_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enquete_id"], name: "index_results_on_enquete_id"
   end
 
 end

@@ -1,0 +1,66 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <%= "アンケート:【#{@question.enquete.title}】" %>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+       <div class="text-primary font-weight-bold mb-2">
+         質問:<%= @question.content %>
+       </div>
+       <p>【質問内容】</p>
+       <% if @question.form_count_check >1  %>
+        <%= link_to "内容追加", "#", class:"btn btn-primary mb-1"%>
+       <% end %>
+       <ul class="modal-ul">
+           <% @forms.each do |form| %>
+            <% form.title.split(',').each_with_index do |text, index| %>
+              <% if (@question.form_count_check >1 && index >0) || (@question.form_count_check == 1)  %> 
+                <li id="li-<%= index -1 %>"> 
+                  <div class="list align-middle">
+                    Q.<%= text  %>
+                  </div>
+                  <% if form.form_type > 2 %>
+                    <div class="text-end mt-1 mb-1">
+                      <button 
+                        class="btn btn-danger btn-sm modal-select-delete"
+                        id="delete-select-<%= form.id %>-<%= index -1 %>"
+                      >削除</button>
+                    </div>
+                  <% end %>
+                </li>
+            <% end %>
+            <% end %>
+          <% end %>
+       </ul>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.modal-select-delete').forEach(function(btn){
+     btn.addEventListener('click',function(){
+       var btnStatus = btn.id.split("-");
+       var recordId = btnStatus[2];
+       var titleId = btnStatus[3];
+       var result = confirm('削除しますか？');
+       if(result){
+         $.ajax({
+            type: "POST",
+            url: "/forms/delete",
+            data: {
+                "id": recordId,
+                "title": titleId
+            },
+            success: function(j_data){
+               alert("削除しました。");
+               btn.style.display = "none";
+               document.getElementById("li-" + titleId).style.display = "none";
+            }
+        });
+       } 
+     });
+  });
+</script>

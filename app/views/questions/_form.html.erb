@@ -1,27 +1,40 @@
-<%= form_with(model: question, local: true) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="bg-info text-white p-3 text-center mb-3">
+        <div class="text-light">【アンケートタイトル】</div>
+        <div><%= @enquete.title %></div>
+      </div>
 
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      
+
+      <% if @question.errors.present? %>
+        <% @question.errors.full_messages.each do |err| %>
+          <div class="alert alert-danger"><%= err %></div>
+        <% end %>
       <% end %>
-      </ul>
+
+      <div class="p-5 bg-light shadow">
+        <%= form_with model: @question, local: true do |f| %>
+
+           <div class="form-group mb-3">
+            <label>概要</label>
+            <%= f.text_area :content, class:"form-control", rows:5, placeholder: "質問を入力ください。" %>
+           </div>
+
+           <%= f.hidden_field :id, value: @enquete.id %>
+
+           <div>
+             <%= f.submit "追加", class:"btn btn-primary btn-block" %>
+           </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :enquete_id %>
-    <%= form.text_field :enquete_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<% if @enquete.question_count? %>
+ <div class="ml-2">
+ <%= link_to '質問追加終了する', enquetes_path, class:"btn btn-primary text-white" %>
+ </div>
 <% end %>

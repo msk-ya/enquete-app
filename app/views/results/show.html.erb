@@ -1,0 +1,17 @@
+<div class="text-center">
+  <h3>アンケート集計</h3>
+  <div class="result-info">
+    <p>アンケート名</p>
+    <p>【<%= @enquete.title %>】</p>
+  </div>
+  <article>
+   <section>
+     <%= render 'text', {titles: @text_titles} %>
+   </section>
+
+   <section>
+     <%= render'select', {titles: @select_titles} %>
+   </section>
+  </article>
+
+</div>

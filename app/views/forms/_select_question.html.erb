@@ -1,0 +1,19 @@
+<%= form_with model: @form, local: true do |f| %>
+  <%= f.hidden_field :id, value: @question.id %>
+  <p>補足説明を入力してください。</p>
+<div class="form-group">
+  <%= f.text_field :content, class: "form-control" %>
+  <div class="text-left mb-2">
+  　<p>最低2つは登録してください。</p>
+    <button type="button" id="add-select" class="btn btn-primary mt-2 rounded-circle mr-1">+</button>
+    <button type="button" id="delete-select" class="btn btn-danger mt-2 rounded-circle">-</button>
+  </div>
+  <div class="form-group" id="select-area">
+    <% @count.times do |i|%>
+      <label><%= "選択項目#{i + 1}" %></label>
+      <%= f.text_field "check[][content]",class:"form-control" %>
+    <% end %>
+   </div>
+</div>
+<%= f.submit "登録",class: "btn btn-primary w-100 mt-3" %>
+<% end %>

@@ -1,0 +1,39 @@
+<h3 class="select-result-header">【選択アンケート集計】</h3>
+<div class="text-main">
+<% titles.each_with_index do |title, i| %>
+  <section>
+    <h2 class="text-result-info"><%= title %></h2>
+    <div>
+      <table class="select-result--main-table">
+        <tbody>
+          <% @selects.each do |select| %>
+            <tr>
+              <td>
+                <% unless select[title].nil? %>
+                  <% select[title].keys.each_with_index do |key, index|  %>
+                    <table class="result-item-table">
+                      <tbody>
+                        <% if index == 0 %>
+                         <tr>
+                          <th class="option_name">選択肢名</th>
+                          <td class="aggregate_number">集計数</td>
+                         </tr>
+                        <% else%>
+                          <tr>
+                            <th><%= key  %></th>
+                            <td><%= select[title][key]  %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+<% end %>
+</div>

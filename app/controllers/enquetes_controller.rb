@@ -1,40 +1,37 @@
 class EnquetesController < ApplicationController
   before_action :set_enquete, only: %i[ show edit update destroy ]
 
-  # GET /enquetes or /enquetes.json
+  
   def index
     @enquetes = Enquete.all
   end
 
-  # GET /enquetes/1 or /enquetes/1.json
   def show
+     @enquete = Enquete.find( params[:id] )
+     @enquete.enquete_aggregate
+    
   end
 
-  # GET /enquetes/new
+  
   def new
     @enquete = Enquete.new
   end
 
-  # GET /enquetes/1/edit
+ 
   def edit
   end
 
-  # POST /enquetes or /enquetes.json
+
   def create
     @enquete = Enquete.new(enquete_params)
-
-    respond_to do |format|
-      if @enquete.save
-        format.html { redirect_to @enquete, notice: "Enquete was successfully created." }
-        format.json { render :show, status: :created, location: @enquete }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @enquete.errors, status: :unprocessable_entity }
-      end
+    if @enquete.save
+      redirect_to question_path(@enquete.id), notice: "質問を入力してください。"
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /enquetes/1 or /enquetes/1.json
+  
   def update
     respond_to do |format|
       if @enquete.update(enquete_params)
@@ -47,14 +44,23 @@ class EnquetesController < ApplicationController
     end
   end
 
-  # DELETE /enquetes/1 or /enquetes/1.json
+  
   def destroy
-    @enquete.destroy
-    respond_to do |format|
-      format.html { redirect_to enquetes_url, notice: "Enquete was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    enquete = Enquete.find( params[:id] )
+    enquete.destroy
   end
+
+  def top
+    @enquete = Enquete.first
+    @question = @enquete.questions.all
+    
+  end
+
+  def answer
+    debugger
+  end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

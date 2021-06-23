@@ -1,27 +1,41 @@
-<%= form_with(model: form, local: true) do |form| %>
-  <% if form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="bg-info text-white p-3 text-center mb-3">
+        <div class="text-light h4">【アンケートタイトル】</div>
+        <div class="text-light mb-1"><%= @question.enquete.title %></div>
+        <div class="text-primary h4">【質問】</div>
+        <div class="text-primary"><%= @question.content %></div>
 
-      <ul>
-      <% form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      </div>
+
+      <div class="p-2 bg-light shadow">
+        <%= form_with model: @form, local: true do |f| %>
+         <div class="ml-2">
+          <p class="text-center">【アンケートのフォームのタイプを選択してください。】</p>
+          <input type="radio" id="edit_type" name="type" value="1" checked><label for="edit_type">入力タイプ質問</label><br>
+          <input type="radio" id="select_type" name="type" value="2"><label for="select_type">選択式タイプ質問</label>
+         </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :html %>
-    <%= form.text_area :html %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :question_id %>
-    <%= form.text_field :question_id %>
-  </div>
+  <!-- 内容 -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="p-5 bg-light shadow">
+          <div id="edit-question-area">
+            <%= render "text_question"%>
+          </div>
+
+          <div id="select-question-area">
+            <%= render "select_question" %>
+          </div>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>

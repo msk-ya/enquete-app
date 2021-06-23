@@ -1,0 +1,60 @@
+@import "bootstrap";
+@import "forms.scss";
+@import "enquetes.scss";
+@import "results.scss";
+@import "pages.scss";
+
+body{
+  background-color: #f0f0f0;
+}
+
+header nav{
+  width: 100;
+  background: rgb(37, 34, 34);
+  color: rgba(251, 250, 250, 0.855);
+  display: flex;
+  padding: 10px 0;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.header-left{
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  li{
+    margin-right: 20px;
+  }
+}
+.header-right{
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.header-img{
+  width: 100%;
+}
+.page-main{
+  margin: 0;
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+ 
+}
+.page-article{
+  background-color: #fff;
+  border-radius: 6px;
+  flex-basis: 75%;
+  margin-right: 2%;
+  margin-left: 1%;
+
+}
+.page-aside{
+  background-color: #fff;
+  border-radius: 6px;
+  margin-right: 1%;
+  flex-basis: 23%; 
+}

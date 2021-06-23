@@ -1,0 +1,13 @@
+<%= form_with url:results_path, local: true do |f| %>
+  <%= f.hidden_field :enquete_id, value: @enquete.id %>
+  <h3 class="p-3 text-center">アンケート:【<%= @enquete.title %>】</h3>
+  <p class="text-center"><%= @enquete.content %></p>
+  <% @questions.each do |q| %>
+      <h5 class="bg-success p-1 text-center text-white"><%= q.content %></h5>
+      <% q.forms.all.each do |f| %>
+        <%= f.html.html_safe %>
+      <% end %>
+  <% end %>
+  <br>
+  <%= f.submit "送信", class:"btn btn-primary w-100" %>
+<% end %>

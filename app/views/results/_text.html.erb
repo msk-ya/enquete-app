@@ -1,0 +1,13 @@
+<h3 class="text-result-header">【入力アンケート集計】</h3>
+<div class="text-main">
+<% titles.each_with_index do |title, i| %>
+  <section>
+    <h2 class="text-result-info"><%= title %></h2>
+    <div>
+     <% @texts.each_with_index do |text,i| %>
+      <p class="text-result-content"><%= text[title] %></p>
+     <% end %>
+    </div>
+  </section>
+<% end %>
+</div>
