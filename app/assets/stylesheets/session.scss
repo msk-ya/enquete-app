@@ -1,0 +1,51 @@
+.login_title{
+  text-align: center;
+  margin: 0 0 0 150px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login_main{
+  border-radius: 6px;
+  position: relative;
+  left: 35%;
+  width: 40%;
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 2% 5%;
+  .field{
+    width: 100%;
+    margin-bottom: 40px;
+    label{
+      margin-bottom: 6px;
+    }
+    input{
+      display: block;
+      width: 100%;
+      border-color: 1px solid #f0f0f0;
+    }
+    span{
+      color: red;
+      font-weight: bold;
+    }
+  }
+  .field_check{
+    margin-top: -30px;
+    margin-bottom: 30px;
+  }
+  .actions{
+    width: 100%;
+    input{
+      display: block;
+      width: 100%;
+      border-color: 1px solid #f0f0f0;
+      background-color: rgb(43, 200, 43);
+      border: none;
+      color: #fff;
+      padding: 8px 0;
+    }
+    input:hover{
+     background-color: rgb(108, 222, 108);
+    }
+  
+  }
+}
