@@ -89,3 +89,36 @@
   width: 100%;
   margin: 30px 0 50px 0;
 }
+/*アンケートの集計についての補足*/
+.aggregate_info{
+  position: relative;
+  left: 10%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/*アンケート一覧テーブル*/
+.page-list-table{
+  position: relative;
+  left: 10%;
+  border: 1px solid #c0c0c0;
+  text-align: left;
+  width: 80%;
+  margin-bottom: 50px;
+  th{
+    background-color: #ecc5c9;
+    color: #522f60;
+    height: 40px;
+  }
+  td{
+    height: 80px;
+    .enquete-answer-button{
+      background-color: rgb(49, 176, 49);
+      text-decoration: none;
+      color: rgb(241, 238, 238);
+      padding: 20px 10px;
+      fill: #FFF;
+    }
+    .enquete-answer-button:hover{
+      background-color: rgb(158, 248, 158);
+    }
+  }
+}

@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
   layout 'page'
+  def top
+    
+  end
+
   def index
-    @app = "my test"
+    @enquetes = Enquete.all.desc_sort
   end
 
   def new

@@ -4,13 +4,18 @@
 @import "results.scss";
 @import "pages.scss";
 @import "session.scss";
+@import "jquery-ui/core";
+@import "jquery-ui/theme";
+@import "jquery-ui/datepicker";
+
 
 body{
   background-color: #f0f0f0;
 }
 
 header nav{
-  width: 100;
+  width: 100%;
+  max-width: 100%;
   background: rgb(37, 34, 34);
   color: rgba(251, 250, 250, 0.855);
   display: flex;
@@ -34,6 +39,12 @@ header nav{
   display: flex;
   flex-direction: row;
   list-style: none;
+  li{
+    a{
+      text-decoration: none;
+      color: orange;
+    }
+  }
 }
 .header-img{
   width: 100%;

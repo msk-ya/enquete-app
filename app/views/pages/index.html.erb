@@ -1,63 +1,37 @@
 <section>
-  <h3 class="site-info">山梨県の様々な出来事のアンケート掲示板</h3>
-  <div class="site_guidance-area">
-    <div class="site-gide-img">
-     <%= image_tag("/maskat.jpeg") %>
-    </div>
-    <div class="site-gide-text">
-      このサイトは、山梨県の仕事やイベント、観光地や明産物、その他日々の出来事など<br>
-      山梨県の様々な些細な出来事を同じ県民の方々とアンケート形式で投稿していただき、<br>
-      少しでも問題を解決、共有するツールとしてご利用いただけたらと思います。<br>
-      <div class="site-enquete-button-div">
-      　<%= link_to "#", class:"a" do %>
-  　　　　 <%= image_tag('/enquete.svg',size: "40x40") %>
-  　　　　 <span>アンケートに参加する</span>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
-<section>
-  <h3 class="site-info">サイトの使い方</h3>
-  <div class="site_how_to_use">
-    <section>
-      <h4>アンケート回答方法</h4>
-      <%= image_tag('/nologin.svg',size: "200x200") %>
-      <p>
-      　　投稿されたアンケートの回答についてはログイン不要でどなたでも参加できます。<br>
-         <%= link_to "こちらに移動して"%>
-         アンケート一覧から参加したいアンケートを選択しご参加ください。
-      </p>
-    </section>
-    <section>
-       <h4>アンケートの登録</h4>
-      <div class="enquete_description_sub_title">アンケート登録手順</div>
-       <div class="site_enquete_description">
-          <!-- STEP1 -->
-          <ul>
-            <li>
-              <%= image_tag("/key.svg") %>
-            </li>
-            <li class="step-list">STEP1</li>
-            <li>ログインまたはメンバー登録します。</li>
-          </ul>
-          <!-- STEP2 -->
-          <ul>
-            <li>
-              <%= image_tag("/write.svg") %>
-            </li>
-            <li class="step-list">STEP2</li>
-            <li>アンケートに回答してもらいます。</li>
-          </ul>
-          <!-- STEP3 -->
-          <ul>
-            <li>
-              <%= image_tag("/question.svg") %>
-            </li>
-            <li class="step-list">STEP3</li>
-            <li>アンケートの集計ページで確認します。</li>
-          </ul>
-      </div>
-    </section>
-  </div>
+  <h3 class="site-info">アンケート一覧</h3>
+  <% if @enquetes.count > 0 %>
+    <p class="aggregate_info">アンケートの集計をご覧になりたい場合はアンケートのタイトルからアクセスしてください。</p>
+    <table class="page-list-table">
+    <thead>
+      <tr>
+        <th>アンケートタイトル</th>
+        <th>投稿日</th>
+        <th>期限</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @enquetes.each do |enquete| %>
+       <tr>
+        <td>
+           <%= link_to  result_path(enquete.id) do %>
+             <%= image_tag("/svg/enquete.svg",size:"25x25",style:"color:white")%><%= enquete.title %>
+           <% end %>
+        </td>
+        <td><%= l enquete.created_at, format: :day %></td>
+        <td></td>
+        <td>
+          <%= link_to  enquete_results_path(enquete), class: "enquete-answer-button" do %>
+           <%= image_tag("/svg/write_white.svg",size:"20x20",style:"color:white")%>アンケートに答える
+          <% end %>
+        </td>
+       </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <div>まだアンケートがありません。</div>
+  <% end %>
+  
 </section>

@@ -18,8 +18,16 @@
           <li>新着アンケート</li>
         </ul>
         <ul class="header-right">
-          <li>ログイン</li>
+          <% if user_signed_in? %>
+             <li>
+               <span><%= image_tag("/user.svg",size:"15x15",style:"background:#fff") %><%= current_user.name %></span>&emsp;
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+             <li><%= link_to "ログイン", new_session_path(resource_name) %></li>
+          <% end %>
         </ul>
+        
       </nav>
       <img src="/custom.jpg" alt="header-img" class="header-img">
     </header>

@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/new'
   get 'pages/show'
-  root "pages#index"
+  root "pages#top"
   get "top", to:"enquetes#top"
   post "answer", to: "enquetes#answer"
   
-  resources :pages, only: [:index, :new]
+  resources :pages, only: [:index, :new] do
+    get 'top', on: :collection
+  end
  
   resources :forms, only:[:create] do
     member do

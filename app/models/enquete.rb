@@ -4,6 +4,8 @@ class Enquete < ApplicationRecord
   validates :title, presence: true, length: {maximum: 20}
   validates :content, presence: true
  
+  scope :desc_sort, -> { order(created_at: :desc)}
+  # Ex:- scope :active, -> {where(:active => true)}
 
   #アンケートの質問の数あるか判別
 
