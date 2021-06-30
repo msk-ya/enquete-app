@@ -122,3 +122,48 @@
     }
   }
 }
+/*新規アンケート作成の際の案内*/
+.login-new-info{
+  position: relative;
+  left: 30%;
+  width: 50%;
+  margin-top: 50px;
+  .div{
+    background-color: blanchedalmond;
+    border-bottom: 5px solid rgb(236, 55, 55);
+    margin-bottom: 50px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .img-div{
+    margin: 50px 0;
+    position: relative;
+    left: 35%;
+  }
+  .login-a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #522f60;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 15px 0;
+  }
+  .login-a:hover{
+    background-color: #754688;
+  }
+  .enquete-a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #522f60;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 15px 0;
+  }
+  .enquete-a:hover{
+    background-color: #754688;
+  }
+}

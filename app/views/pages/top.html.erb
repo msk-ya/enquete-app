@@ -62,14 +62,18 @@
   </div>
 </section>
 <div class="login-new-info">
-  <p>アンケートの作成はこちらへ</p>
-   <%= image_tag("/svg/under_allow.svg") %>
+  <div class="div">アンケートの作成へ</div>
+   <div class="img-div"><%= image_tag("/svg/under_allow.svg") %></div>
   <div>
     <% if user_signed_in? %>
-      <%= link_to "アンケート作成はこちら", "#" %>
+      <%= link_to  new_enquete_path(params:{page: true}),class:"enquete-a" do %>
+        <%= image_tag("/svg/question_white.svg",size:"20x30",style:"color:white") %>アンケート作成はこちら
+      <% end %>
     <% else %>
       <p>まずはログインしてください。</p>
-      <%= link_to "ログイン", "#" %>
+      <%= link_to  new_user_session_path, class:"login-a" do %>
+        <%= image_tag("/svg/key.svg",size:"20x30") %>ログイン
+      <% end %>
     <% end %>
   </div>
 </div>

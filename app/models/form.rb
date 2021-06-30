@@ -9,7 +9,6 @@ class Form < ApplicationRecord
        <input type='hidden' name='text_title[][title]' value=#{question.content} />
        <input type='hidden' name='form_type[][type]' value=0 />
        <textarea name='edit[][text]' rows='4'　required　 class='form-control answer-text'></textarea>
-       <p class='answer-count'>文字数<span style='color:red'>0</span>
     "
     self.html = html
     self.title = content
