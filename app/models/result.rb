@@ -10,7 +10,7 @@ class Result < ApplicationRecord
 #************************************アンケート登録**********************************************************************
   #アンケートの登録作業
 
-  def save_result(id, text_titles, select_titles,  texts,  selects,  form_type)
+  def save_result(id, text_titles, select_titles,  texts,  selects,  form_type, user)
     result_text_title = []
     result_select_title = []
     result_text_content = []
@@ -75,6 +75,7 @@ class Result < ApplicationRecord
     self.content = result_text_content
     self.select = result_select_content
     self.form_types = result_types
+    self.user_name = user.present? ?user : "匿名さん"
   end
 
   #************************************アンケート登録終了**********************************************************************

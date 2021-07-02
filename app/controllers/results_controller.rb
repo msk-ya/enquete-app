@@ -9,6 +9,7 @@ class ResultsController < ApplicationController
     @resultDatas = @enquete.enquete_aggregate
     @texts = @resultDatas[0]
     @selects = @resultDatas[1]
+    @user_names = @resultDatas[2]
     @text_titles = @enquete.enquete_titles(@texts)
     @select_titles = @enquete.enquete_titles(@selects)
     
@@ -26,7 +27,6 @@ class ResultsController < ApplicationController
 
   
   def create
-  
     @enquete = Enquete.find( params[:enquete_id])
     @result = @enquete.results.new
     @questions = @enquete.questions
@@ -36,7 +36,8 @@ class ResultsController < ApplicationController
       params[:select_title],  
       params[:edit], 
       params[:select], 
-      params[:form_type]
+      params[:form_type],
+      params[:user_name]
     )
     if @result.save
       redirect_to root_path

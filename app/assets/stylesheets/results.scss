@@ -23,6 +23,7 @@
     left: 25%;
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
 
   }
   .text-result-content{
@@ -35,6 +36,11 @@
     left: 25%;
     vertical-align: middle;
     text-align: left;
+    margin-bottom: 10px;
+     div{
+      text-align: right;
+    }
+    
   }
   .select-result--main-table{
      position: relative;

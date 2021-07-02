@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_133652) do
+ActiveRecord::Schema.define(version: 2021_07_02_015522) do
 
   create_table "enquetes", force: :cascade do |t|
     t.string "title"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_133652) do
     t.integer "enquete_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
     t.index ["enquete_id"], name: "index_results_on_enquete_id"
   end
 

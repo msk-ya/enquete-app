@@ -17,7 +17,8 @@ class Enquete < ApplicationRecord
 #**********************************************************************************************************************************
 def enquete_aggregate
   select_results = []                                               #=>選択タイプの集計
-  text_results = []   
+  text_results = []                                                 #=>入力タイプのテキストまとめ
+  text_names = []                                                    #=>入力タイプの投稿者集計
 
   #選択タイプの集計の雛形配列の準備(formモデルにて記述)
     selects_array =  Form.SelectItems
@@ -25,11 +26,13 @@ def enquete_aggregate
   self.results.each do |result|
     #テキストタイプの結果格納
     text_hash = {}                                                  #=>レコード毎の入力データ格納ハッシュ
+    name_hash = {}                                                  #=>タイトルと名前の格納
     result.text_title.each_with_index do |title, i|
       text_hash[title] = result.content[i]
+      name_hash[title] = result.user_name
     end
     text_results.push(text_hash)                                    #=>全体のテキストタイプの集計に格納
-
+    text_names.push(name_hash)                                      #=>全体の名前に格納
 
    
 
@@ -50,7 +53,7 @@ def enquete_aggregate
       select_results.push(select_hash)                              #=>データ配列に上を格納
     end
   end
-  return text_results, select_results.uniq
+  return text_results, select_results.uniq, text_names
 end
 #*********************************************************************************************************
 
