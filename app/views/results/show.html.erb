@@ -6,11 +6,12 @@
   </div>
   <article>
    <section>
-     <%= render 'text', {titles: @text_titles} %>
+     <%= render'select', {titles: @select_titles, totals: @totals} %>
+    
    </section>
 
    <section>
-     <%= render'select', {titles: @select_titles} %>
+      <%= render 'text', {titles: @text_titles} %>
    </section>
   </article>
 

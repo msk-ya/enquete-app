@@ -21,7 +21,20 @@
                         <% else%>
                           <tr>
                             <th><%= key  %></th>
-                            <td><%= select[title][key]  %></td>
+                            <td class="progress-td">
+                              <progress 
+                                id = "<%= "progress-#{select[title][key]}-#{totals[title]}-#{key}" %>"
+                                value= "<%= select[title][key] %>" 
+                                max = "<%= totals[title] %>"
+                                class = "progress">
+                              </progress>
+                              <div
+                               id = <%= "label-#{select[title][key]}-#{totals[title]}-#{key}" %>
+                              >
+                                <%= select[title][key]  %>
+                                <span>(<%= enquete_rate(select[title][key], totals[title]) %>%)</span>
+                             </div>
+                            </td>
                           </tr>
                         <% end %>
                       </tbody>

@@ -12,7 +12,7 @@ class ResultsController < ApplicationController
     @user_names = @resultDatas[2]
     @text_titles = @enquete.enquete_titles(@texts)
     @select_titles = @enquete.enquete_titles(@selects)
-    
+    @totals = selects_totals                                              #=>選択型トータル(ヘルパーメソッドから)
   end
 
   def new
