@@ -4,7 +4,8 @@
 
 <div id="user-modal" class="modal" tabindex="-1" role="dialog"></div>
 
-<%= link_to "新規登録", new_enquete_path, class:"btn btn-primary mb-3" %>
+<%= link_to "HOMEへ", root_path, class:"btn btn-info mb-3" %>
+<%= link_to "新規登録", new_enquete_path(params:{user_id: @user.id}), class:"btn btn-primary mb-3" %>
 <% if  @enquetes.length >0 %>
   <table class="table">
   <thead>

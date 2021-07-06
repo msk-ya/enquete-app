@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_02_015522) do
+ActiveRecord::Schema.define(version: 2021_07_05_205524) do
 
   create_table "enquetes", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2021_07_02_015522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "limit"
+    t.string "area"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_enquetes_on_user_id"
   end
 
   create_table "forms", force: :cascade do |t|

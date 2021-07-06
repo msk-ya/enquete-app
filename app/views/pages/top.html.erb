@@ -9,7 +9,7 @@
       山梨県の様々な些細な出来事を同じ県民の方々とアンケート形式で投稿していただき、<br>
       少しでも問題を解決、共有するツールとしてご利用いただけたらと思います。<br>
       <div class="site-enquete-button-div">
-      　<%= link_to "#", class:"a" do %>
+      　<%= link_to pages_path, class:"a" do %>
   　　　　 <%= image_tag('/enquete.svg',size: "40x40") %>
   　　　　 <span>アンケートに参加する</span>
         <% end %>
@@ -66,7 +66,7 @@
    <div class="img-div"><%= image_tag("/svg/under_allow.svg") %></div>
   <div>
     <% if user_signed_in? %>
-      <%= link_to  new_enquete_path(params:{page: true}),class:"enquete-a" do %>
+      <%= link_to  new_enquete_path(params:{page: true, user_id: current_user.id}),class:"enquete-a" do %>
         <%= image_tag("/svg/question_white.svg",size:"20x30",style:"color:white") %>アンケート作成はこちら
       <% end %>
     <% else %>

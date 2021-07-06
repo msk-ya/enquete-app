@@ -4,6 +4,7 @@ class EnquetesController < ApplicationController
   
   def index
     @enquetes = Enquete.all
+    @user = User.find( params[:user_id] )
   end
 
   def show
@@ -15,6 +16,11 @@ class EnquetesController < ApplicationController
   
   def new
     @enquete = Enquete.new
+    if params[ :user_id ]
+      @user = User.find( params[:user_id] )
+    else
+      redirect_to root_path, notice: "ログインしてご利用ください。"
+    end
   end
 
  
@@ -70,6 +76,6 @@ class EnquetesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def enquete_params
-      params.require(:enquete).permit(:title, :content, :limt)
+      params.require(:enquete).permit(:title, :content, :limit)
     end
 end

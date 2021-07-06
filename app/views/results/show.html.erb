@@ -4,11 +4,11 @@
     <p>アンケート名</p>
     <p>【<%= @enquete.title %>】</p>
   </div>
+  <%= link_to "⬅︎戻る", pages_index_path,style:"position:relative;;left:-23%;top:-20px" %>
   <article>
    <section>
      <%= render'select', {titles: @select_titles, totals: @totals} %>
-    
-   </section>
+   </section><br>
 
    <section>
       <%= render 'text', {titles: @text_titles} %>

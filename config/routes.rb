@@ -34,10 +34,11 @@ Rails.application.routes.draw do
   end
   
   resources :results, only:[:create, :show]
-  resources :enquetes do
+  resources :enquetes, except: [:index] do
     resources :results, only: [:delete] do
       get :new, on: :collection
     end
   end
+  get "/enquetes/:user_id/user/index", to: "enquetes#index", as: :enquetes_user_index
   
 end

@@ -29,7 +29,7 @@ class FormsController < ApplicationController
     end
    
     if @form.save
-       redirect_to root_path
+       redirect_to enquetes_user_index_path(current_user.id)
     else
       render :new
     end

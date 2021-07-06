@@ -13,9 +13,25 @@
     <header>
       <nav>
         <ul class="header-left">
-          <li>HOME</li>
-          <li>アンケート一覧</li>
+          <li>
+           <%= link_to root_path do  %>
+             <%= image_tag('/svg/home.svg', size:"25x25", style:"vertical-align:bottom") %> HOME
+           <% end%>
+          </li>
+          <li>
+          　<%= link_to pages_path do  %>
+              <%= image_tag('/svg/question_header.svg', size:"25x25", style:"vertical-align:bottom;color:white") %> アンケート一覧
+            <% end %>
+          </li>
           <li>新着アンケート</li>
+          <!-- ログイン専用 -->
+
+          <% if user_signed_in? %>
+           <li>
+             <%= link_to "アンケート管理", enquetes_user_index_path(current_user)  %>
+           </li>
+          <% end %>
+
         </ul>
         <ul class="header-right">
           <% if user_signed_in? %>

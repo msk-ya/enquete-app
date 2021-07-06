@@ -5,14 +5,16 @@
     <h2 class="text-result-info"><%= title %></h2>
     <div>
      <% @texts.each_with_index do |text,i| %>
-      <div class="text-result-content">
-        <%= text[title] %>
-        <% if text[title].present? %>
-          <div>
-            <%= "投稿者:#{@user_names[i][title].to_s}"  %>
-          </div>
-        <% end %>
-      </div>
+      <% if text[title].present? %>
+        <div class="text-result-content">
+          <%= text[title] %>
+          <% if text[title].present? %>
+            <div>
+              <%= "投稿者:#{@user_names[i][title].to_s}"  %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
      <% end %>
     </div>
   </section>

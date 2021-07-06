@@ -1,6 +1,6 @@
 class AddLimitToEnquete < ActiveRecord::Migration[5.2]
   def change
     add_column :enquetes, :limit, :date
-    #Ex:- add_column("admin_users", "username", :string, :limit =>25, :after => "email")
+    add_column :enquetes, :area, :string
   end
 end
