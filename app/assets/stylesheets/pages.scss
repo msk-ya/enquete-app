@@ -7,7 +7,6 @@
   margin: 2% 2% 2% 3%;
   color: #f09199;
   text-align: center;
-  padding: 10px 0;
 }
 .site_guidance-area{
   display: flex;
@@ -179,3 +178,55 @@
     transform: translateY(-4px);
   }
 }
+/*一覧ページにてアンケートタイプリンクへ*/
+.enquete-select-area{
+  display: flex;
+  width: 80%;
+  position: relative;
+  left: 10%;
+  margin-bottom: 30px;
+  .new-enquete{
+    width: 49%;
+    margin-right: 1%;
+    text-align: center;
+    a{
+      width: 100%;
+      background-color: rgb(229, 197, 150);
+      display: block;
+      color: #522f60;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 0;
+      transition: box-shadow .3s;
+    }
+    a:hover{
+      background-color: rgb(251, 241, 225);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 12px rgb(229, 197, 150);
+    }
+  }
+  .area-enquete{
+    width: 49%;
+    margin-left: 1%;
+    text-align: center;
+    a{
+      width: 100%;
+      background-color: rgb(229, 197, 150);
+      color: #522f60;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      display: block;
+      text-decoration: none;
+      padding: 10px 0;
+      transition: box-shadow .3s;
+      
+    }
+    a:hover{
+       background-color: rgb(251, 241, 225);
+       box-shadow: 0 12px 12px rgb(229, 197, 150);
+       transform: translateY(-4px);
+    }
+  }
+}
+

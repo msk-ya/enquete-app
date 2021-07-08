@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   resources :pages, only: [:index, :new] do
     get 'top', on: :collection
   end
+  get '/page/area/:page_name', to: 'pages#area', as: :page_areas
+
+
+
+
+
  
   resources :forms, only:[:create] do
     member do

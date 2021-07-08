@@ -34,5 +34,17 @@
   <% else %>
     <div style="text-align:center;padding:10px 0">まだアンケートがありません。</div>
   <% end %>
-  
 </section>
+<div class="enquete-select-area">
+  <div class= "new-enquete">
+    <%= link_to "#" do %>
+      <%= image_tag('/svg/new.svg', size: '50x50') %> 新着アンケートへ
+    <% end %>
+  </div>
+
+   <div class= "area-enquete">
+    <%= link_to "#" do %>
+      <%= image_tag('/svg/area.svg', size: '50x50') %> 地域別アンケートへ
+    <% end %>
+  </div>
+</div>
