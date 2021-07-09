@@ -115,6 +115,7 @@
       color: rgb(241, 238, 238);
       padding: 20px 10px;
       fill: #FFF;
+      display: inline-block;
     }
     .enquete-answer-button:hover{
       background-color: rgb(158, 248, 158);
@@ -229,4 +230,30 @@
     }
   }
 }
+/*県内の写真のページ*/
+.img_area{
+  width: 100%;
+  a{
+    background-color: #1a813d;
+    padding: 10px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #fff
+  }
+  a:hover{
+    background-color: rgb(30, 222, 30);
+  }
+  img{
+    position: relative;
+    left: 25%;
+    background-color: #c0c0c0;
+  }
+}
+/*県内検索の説明 */
+.area-serach-info{
+   margin: 2% 2% 5% 10%;
+}
+
 

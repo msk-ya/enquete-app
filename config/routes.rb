@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   post "answer", to: "enquetes#answer"
   
   resources :pages, only: [:index, :new] do
-    get 'top', on: :collection
+    collection do
+      get :top
+      get :area
+    end
+    
   end
-  get '/page/area/:page_name', to: 'pages#area', as: :page_areas
+  
 
 
 

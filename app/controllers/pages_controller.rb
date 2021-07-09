@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:top, :index]
+  skip_before_action :authenticate_user!, only: [:top, :index, :area]
   layout 'page'
 
   def top
@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def area
+    puts params
   end
   
 end
