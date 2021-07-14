@@ -1,8 +1,6 @@
-<section>
-  <h3 class="site-info">アンケート一覧</h3>
-  <% if @enquetes.count > 0 %>
-    <p class="aggregate_info">アンケートの集計をご覧になりたい場合はアンケートのタイトルからアクセスしてください。</p>
-    <table class="page-list-table">
+<div class="area_present_enquete">
+  <p><%= "【#{params[:area]}エリアアンケート】" %></p>
+  <table class="page-list-table">
     <thead>
       <tr>
         <th>アンケートタイトル</th>
@@ -31,20 +29,4 @@
       <% end %>
     </tbody>
   </table>
-  <% else %>
-    <div class="index-no-enquete">アンケートがありません。</div>
-  <% end %>
-</section>
-<div class="enquete-select-area">
-  <div class= "new-enquete">
-    <%= link_to "#" do %>
-      <%= image_tag('/svg/new.svg', size: '50x50') %> 新着アンケートへ
-    <% end %>
-  </div>
-
-   <div class= "area-enquete">
-    <%= link_to area_pages_path do %>
-      <%= image_tag('/svg/area.svg', size: '50x50') %> 地域別アンケートへ
-    <% end %>
-  </div>
 </div>

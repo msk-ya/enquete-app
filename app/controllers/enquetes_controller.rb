@@ -76,6 +76,6 @@ class EnquetesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def enquete_params
-      params.require(:enquete).permit(:title, :content, :limit)
+      params.require(:enquete).permit(:title, :content, :limit, :area)
     end
 end

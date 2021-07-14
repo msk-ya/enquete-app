@@ -1,2 +1,12 @@
-<h1>サンプル</h1>
-<p><%= @app %></p>
+<h3>タイトル名で検索</h3>
+<p>アンケートタイトルを元に検索します。<br>キーワードを入力してください。</p>
+<div class="form-search">
+  <label>タイトルキーワード検索</label>
+
+  <%= form_with url:pages_path, local: true,  method: :get do |f| %>
+    <%= f.text_field :search, placeholder: " キーワードを入力してください。" %>
+    <%= f.submit "送信" %>
+  <% end %>
+ <h3>日付け検索</h3>
+ <%= render 'cal' %>
+</div>

@@ -10,5 +10,6 @@
 
 <!--検索アンケート -->
 <section>
-  <h3 class="site-info">検索されたアンケート</h3>
+  <h3 id="site-area-info">検索されたアンケート</h3>
+  <%= render @enquetes.count  >0? 'present' : 'null', {enquetes: @enquetes} if @enquetes  %>
 </section>

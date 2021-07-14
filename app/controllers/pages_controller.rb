@@ -7,8 +7,9 @@ class PagesController < ApplicationController
   end
 
   def index
-    @enquetes = Enquete.all.desc_sort
+    @enquetes = params[:search] ? Enquete.fuzzy_search( params[:search] ) :  Enquete.all.desc_sort
   end
+  
 
   def new
   end
@@ -17,7 +18,11 @@ class PagesController < ApplicationController
   end
 
   def area
-    puts params
+    if params[:area].present?
+      @enquetes = Enquete.where(area: params[:area])
+    else
+       @enquetes = Enquete.all
+    end
   end
   
 end

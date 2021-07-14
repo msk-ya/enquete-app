@@ -1,12 +1,13 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.site-info{
+.site-info, #site-area-info{
   background-color: #522f60;
   border-left: 10px solid #f09199;
   margin: 2% 2% 2% 3%;
   color: #f09199;
   text-align: center;
+  padding: 6px 0;
 }
 .site_guidance-area{
   display: flex;
@@ -127,6 +128,18 @@
 
     }
   }
+}
+/*アンケートなしの場合*(indexページ)*/
+.index-no-enquete{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  color: #553c3e;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /*新規アンケート作成の際の案内*/
 .login-new-info{
@@ -254,5 +267,13 @@
 /*県内検索の説明 */
 .area-serach-info{
    margin: 2% 2% 5% 10%;
+}
+/*エリア別アンケート存在時のエリア*/
+.area_present_enquete{
+  p{
+     margin: 2% 2% 2% 3%;
+     font-weight: bold;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
 }
 

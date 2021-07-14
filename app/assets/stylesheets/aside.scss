@@ -1,0 +1,46 @@
+.page-aside{
+  h3{
+    background-color: #522f60;
+    border-left: 10px solid #f09199;
+    margin: 8% 2% 2% 3%;
+    color: #f09199;
+    text-align: center;
+    font-size: 18px;
+    padding: 4px;
+  }
+  p{
+    text-align: center;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  label{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  form{
+    width: 100%;
+    input[type="text"]{
+      width: 100%;
+      border: 1px solid #c0c0c0;
+      font-size: 9px;
+      padding: 6px 0;
+      outline: 0;
+    }
+    input[type="text"]:focus{
+     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);
+     font-size: 12px;
+    }
+    input[type="submit"]{
+      width: 100%;
+      background-color: rgb(229, 197, 150);
+      border: none;
+      margin-top: 2%;
+      color: #444;
+      padding: 6px 0;
+    }
+     input[type="submit"]:hover{
+       background-color: rgb(247, 126, 6);
+       box-shadow: 1px 1px 2px 1px rgb(221, 134, 4);;
+     }
+  }
+}

@@ -68,4 +68,9 @@ end
     return array.uniq
   end
 
+ #曖昧検索
+  def self.fuzzy_search( search )
+    where("title like ?", "%#{search}%")
+  end
+
 end
