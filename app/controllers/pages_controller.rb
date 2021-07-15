@@ -7,7 +7,15 @@ class PagesController < ApplicationController
   end
 
   def index
-    @enquetes = params[:search] ? Enquete.fuzzy_search( params[:search] ) :  Enquete.all.desc_sort
+    if params[:search]                                       #=>キーワード検索ありの場合
+      @enquetes = Enquete.fuzzy_search( params[:search] )
+
+    elsif params[:date]                                      #=>日付検索ありの場合
+      @enquetes =Enquete.date_search( params[:date] )
+
+    else
+      @enquetes = Enquete.all.desc_sort                      #=>デフォルト
+    end
   end
   
 

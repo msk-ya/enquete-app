@@ -73,4 +73,19 @@ end
     where("title like ?", "%#{search}%")
   end
 
+  #日付検索
+  def self.date_search( date )
+    target_date = Date.parse( date )
+    record = []                                            #=>対象のレコード配列
+    all.each do |enquete|
+      comparison_date = enquete.created_at.to_date
+      if comparison_date == target_date                    #=>全レコードから該当日付のレコード抽出
+        record << enquete
+      end
+    end
+    return record
+  end
+
+
+
 end

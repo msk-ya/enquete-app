@@ -78,7 +78,17 @@ function createProcess(year, month) {
 
 function sendDay(year, month, day){
   const sendData = String(year) + "/" + String(toDoubleDigits(month)) + "/" + String(toDoubleDigits(day));
-  alert(sendData);
+  window.location = "./pages?date=" + sendData;
+ /* $.ajax({
+    url: 'http://localhost:3000/pages?date=' + sendData,
+    type: 'GET'
+  }).done(function (data, textStatus, jqXHR) {
+    alert('success');
+  }).fail(function (jqXHR, textStatus, errorThrown) {
+    //失敗
+    alert('error');
+  });
+  */
 }
 
 //日付の0埋め
