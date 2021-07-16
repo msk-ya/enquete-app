@@ -3,6 +3,7 @@
 @import "enquetes.scss";
 @import "results.scss";
 @import "pages.scss";
+@import "pages_phone.scss";
 @import "session.scss";
 @import "aside.scss";
 @import "cal.scss";
@@ -79,4 +80,17 @@ header nav{
   border-radius: 6px;
   margin-right: 1%;
   flex-basis: 23%; 
+}
+/*--スマートフォン対応--------------------------------------------------*/
+
+@media screen and (max-width: 767px){
+  .page-main{
+    display: block!important;
+  }
+  .page-article{
+    width: 100%;
+  }
+  .page-aside{
+    width: 100%;
+  }
 }

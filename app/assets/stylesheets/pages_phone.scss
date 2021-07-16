@@ -1,0 +1,21 @@
+@media screen and (max-width: 767px){
+  .site-info, #site-area-info{
+     font-size: 16px;
+     padding: 12px 0;
+    }
+  .site_guidance-area{
+    display: block;
+    width: 100%;
+   .site-gide-img{
+     width: 100%;
+     img{
+       display: block;
+       width: 90%;
+       position: relative;
+       left: 2%;
+       max-width: 90%;
+     }
+   }
+  }
+  
+}
