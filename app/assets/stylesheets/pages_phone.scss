@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
   .site-info, #site-area-info{
      font-size: 16px;
      padding: 12px 0;
@@ -17,5 +17,66 @@
      }
    }
   }
-  
+  /*サイトボタンエリア */
+    .site-enquete-button-div{
+      margin-top: -10px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 100%;
+      .a{
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        width: 90%;
+        max-width: 90%;
+        box-sizing: border-box;
+        margin-left: 0;
+        img{
+            width: 10%;
+            margin-left: 0;
+          }
+        div{
+          margin-top: 1%;
+          margin-left: -3%;
+          width: 70%;
+        }
+      }
+
+      
+    }
+    /*サイト内のアンケート登録の説明エリア*/
+        .site_enquete_description{
+          display: block;
+          width: 100%;
+          ul{
+            margin:0 auto;
+            margin-bottom: 50px;
+            width: 95%;
+            list-style: none;
+            position: relative;
+            left: -5%;
+            li{
+              margin-top: 10px;
+              img{
+                width: 150px;
+                height: 150px;
+              }
+            }
+            .step-list{
+                margin-top: 20px;
+                margin-bottom: 15px;
+                background-color: #522f60;
+                color:#ecc5c9;
+                border-radius: 100px;
+                width: 50%;
+                position: relative;
+                left: 25%;
+
+            }
+          }
+        }
+
+
+
+
 }

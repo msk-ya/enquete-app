@@ -4,14 +4,14 @@
     <div class="site-gide-img">
      <%= image_tag("/maskat.jpeg") %>
     </div>
+
     <div class="site-gide-text">
       このサイトは、山梨県の仕事やイベント、観光地や明産物、その他日々の出来事など<br>
       山梨県の様々な些細な出来事を同じ県民の方々とアンケート形式で投稿していただき、<br>
       少しでも問題を解決、共有するツールとしてご利用いただけたらと思います。<br>
       <div class="site-enquete-button-div">
       　<%= link_to pages_path, class:"a" do %>
-  　　　　 <%= image_tag('/enquete.svg',size: "40x40") %>
-  　　　　 <span>アンケートに参加する</span>
+  　　　　 <div><%= image_tag('/enquete.svg') %>アンケートに参加する</div>
         <% end %>
       </div>
     </div>

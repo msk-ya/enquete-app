@@ -14,11 +14,16 @@
   margin-left: 3%;
   
 }
+.site-gide-text{
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 /*サイトボタンエリア */
 .site-enquete-button-div{
   margin-top: 0.5%;
   margin-left: 2%;
-  width: 98%;
+  width: 100%;
+  text-align: left;
   .a{
     background-color: #ecc5c9;
     border: 1px solid #ecc5c9;
@@ -26,20 +31,29 @@
     color: #522f60;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
-    display: table;
+    display: flex;
     font-weight: bold;
     text-decoration: none;
-    padding: 2%;
-    width: 100%;
+    padding: 10px 0;
+    width: 95%;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -5%;
+    margin-top: 2%;
+  
+    
     img{
-      position: relative;
-      left: 20%;
+      width: 10%;
+     
     }
-    span{
-      position: relative;
-      left: 10%;
-      top: 2px;
+    div{
+      margin-top: 1%;
+      width: 90%;
+      font-size: 18px;
+      text-align: center;
+      
     }
+   
   &.a:hover{
     background-color:#f8d9db;
     }
