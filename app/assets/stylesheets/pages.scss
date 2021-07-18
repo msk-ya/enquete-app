@@ -183,11 +183,12 @@
     margin-bottom: 40px;
     padding: 15px 0;
     transition: box-shadow .3s;
-    box-shadow: 0 12px 12px #a262bb;
-    transform: translateY(-4px);
+    
   }
   .login-a:hover{
     background-color: #754688;
+    box-shadow: 0 12px 12px #a262bb;
+    transform: translateY(-4px);
   }
   .enquete-a{
     display: block;

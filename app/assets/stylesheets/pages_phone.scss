@@ -76,6 +76,18 @@
           }
         }
 
+    /*新規アンケート作成の際の案内*/
+      .login-new-info{
+        position: relative;
+        left: 5%;
+        width: 90%;
+        margin-top: 50px;
+        .img-div{
+           left: 30%;
+           width: 20px;
+         }
+      }
+      
 
 
 

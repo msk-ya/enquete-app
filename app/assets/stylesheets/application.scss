@@ -15,8 +15,12 @@
 body{
   background-color: #f0f0f0;
 }
+.phone_header{
+  display: none;
+  background-color: black;
+}
 
-header nav{
+.pc_header .pc-nav{
   width: 100%;
   max-width: 100%;
   background: rgb(37, 34, 34);
@@ -84,6 +88,12 @@ header nav{
 /*--スマートフォン対応--------------------------------------------------*/
 
 @media screen and (max-width: 767px){
+  .phone_header{
+    display: block;
+  }
+  .pc_header{
+    display: none;
+  }
   .page-main{
     display: block!important;
   }
@@ -93,4 +103,52 @@ header nav{
   .page-aside{
     width: 100%;
   }
-}
+  /**********************ハンバーガーメニュー**********************************/
+  .hamburger-menu{
+    padding: 5px 0;
+    display: flex;
+    margin-left: 1%;
+   
+  }
+  .menu-btn {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #b0b0b0b0;
+    }
+    #menu-btn-check {
+      display: none;
+    }   
+    .menu-btn .menu-span,
+    .menu-btn .menu-span:before,
+    .menu-btn .menu-span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 12px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn .menu-span:before {
+        bottom: 8px;
+    }
+    .menu-btn .menu-span:after {
+        top: 8px;
+    }
+    #menu-btn-check:checked ~ .menu-btn .menu-span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    }
+    #menu-btn-check:checked ~ .menu-btn .menu-span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn .menu-span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+ /**********************ハンバーガーメニュー終了**********************************/   
+  }
