@@ -1,11 +1,26 @@
  <div class="hamburger-menu">
-  <input type="checkbox" id="menu-btn-check">
-  <label for="menu-btn-check" class="menu-btn"><span class="menu-span"></span></label>
-  <div 
-    style="color:white;font-size:14px;font-weight:bold;position:relative; left:33%;top:2px;"
-  >
-    <%= link_to root_path, style:"color:white;text-decoration:none;" do  %>
-      <%= image_tag('/svg/home.svg', size:"25x25", style:"vertical-align:bottom;") %> HOME
-    <% end%>
-  </div>
+    <input type="checkbox" id="menu-btn-check">
+    <label for="menu-btn-check" class="menu-btn"><span class="menu-span"></span></label>
+    <div 
+      style="color:white;font-size:14px;font-weight:bold;position:relative; left:33%;top:2px;"
+    >
+      <%= link_to root_path, style:"color:white;text-decoration:none;" do  %>
+        <%= image_tag('/svg/home.svg', size:"25x25", style:"vertical-align:bottom;") %> HOME
+      <% end%>
+    </div>
+
+    <!-- リスト -->
+    <div class="menu-content">
+        <ul>
+          <li>
+              <a href="#">メニューリンク1</a>
+          </li>
+          <li>
+              <a href="#">メニューリンク2</a>
+          </li>
+          <li>
+              <a href="#">メニューリンク3</a>
+          </li>
+        </ul>
+    </div>
 </div>
