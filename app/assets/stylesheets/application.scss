@@ -155,12 +155,26 @@ body{
       .menu-content ul {
           padding: 70px 10px 0;
       }
-      .menu-content ul li {
+      .menu-content ul .li {
           border-bottom: solid 1px #fff;
           color: #fff;
           list-style: none;
       }
-      .menu-content ul li a {
+      .menu-content ul .phone-user{
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+             span{
+               color: #fff;
+               font-size: 20px;
+             }
+             img{
+               width: 25px;
+               height: 25px;
+             }
+          }
+      .menu-content ul .li a {
           display: block;
           width: 100%;
           font-size: 15px;
@@ -170,7 +184,7 @@ body{
           padding: 9px 15px 10px 0;
           position: relative;
       }
-      .menu-content ul li a::before {
+      .menu-content ul .li a::before {
           content: "";
           width: 7px;
           height: 7px;
@@ -194,5 +208,40 @@ body{
       #menu-btn-check:checked ~ .menu-content {
           left: 0;/*メニューを画面内へ*/
       }
- /**********************ハンバーガーメニュー終了**********************************/   
+      .header-right{
+          margin: 0;
+          margin-top: -5%;
+          list-style: none;
+          width: 100%;
+          li{
+            display: flex;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            span{
+              color: #fff;  
+            }
+            .log_out{
+              text-decoration: none;
+              background-color: red;
+              border-bottom: none;
+              width: 100%;
+              padding: 12px 0;
+            }
+           .log_in{
+              text-decoration: none;
+              color: rgb(42, 42, 147);
+              background-color: #f0f0f0;
+              border-bottom: none;
+              width: 100%;
+              padding: 12px 0;
+            }
+          }
+        }
+        .header-img{
+          width: 100%;
+    }
+ /**********************ハンバーガーメニュー終了**********************************/  
+   
   }

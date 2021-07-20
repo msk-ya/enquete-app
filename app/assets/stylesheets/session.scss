@@ -49,3 +49,20 @@
   
   }
 }
+@media screen and (max-width: 767px) {
+  .login_title{
+    margin: 0;
+    margin-top: -20px;
+    }
+
+  .login_main{
+     left: 0;
+     width: 100%;
+     padding: 50px 0;
+     .actions{
+       width: 90%;
+       margin-left: 5%;
+       margin-bottom: 15px;
+     }
+  }
+}

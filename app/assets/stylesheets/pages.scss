@@ -17,6 +17,8 @@
 .site-gide-text{
   margin: 0 auto;
   box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-wrap:break-all;
 }
 /*サイトボタンエリア */
 .site-enquete-button-div{
