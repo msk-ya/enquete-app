@@ -107,6 +107,7 @@
 }
 /*アンケートの集計についての補足*/
 .aggregate_info{
+  width: 100%;
   position: relative;
   left: 10%;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -292,5 +293,51 @@
      font-weight: bold;
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
+}
+.index-page-phone{
+  position: relative;
+  left: 5%;
+  width: 90%;
+  display: none;
+  table{
+   margin-bottom: 50px;
+   th{
+     background-color: #ecc5c9;;
+     width: calc( 1/ 2 * 100%);
+     color: #522f60;
+   }
+   td{
+     color: black;
+     .enquete-answer-button{
+        background-color: rgb(49, 176, 49);
+        text-decoration: none;
+        color: rgb(241, 238, 238);
+        padding: 20px 10px;
+        fill: #FFF;
+        display: flex;
+        width: 90%;
+        text-align: center;
+        justify-content: center;
+        margin-top: 1%;
+        margin-left: 5%;
+       }
+    span{
+       background-color: red;
+       padding: 2px;
+       color: #fff;
+     }
+    }
+  }
+  
+}
+/* ipad */
+@media screen and (max-width: 769px) {
+  .index-page-phone{
+    display: block;
+  }
+  .page-list-table{
+     display: none;
+  }
+
 }
 

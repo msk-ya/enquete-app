@@ -82,7 +82,6 @@
             }
           }
         }
-
     /*新規アンケート作成の際の案内*/
       .login-new-info{
         position: relative;
@@ -94,8 +93,23 @@
            width: 20px;
          }
       }
-      
-
-
-
+  /*アンケート一覧ページの案内文*/
+  .aggregate_info{
+    max-width: 100%;
+    width: 90%;
+    overflow-wrap:break-word;
+    left: 0;
+    margin-left: 5%;
+  }
+  /*アンケートリンクボタン*/
+  .enquete-select-area{
+    display: block;
+    padding: 10px 0;
+    border-top: 1px dotted #c0c0c0;
+    /*新規,地域ボタン*/
+    .new-enquete, .area-enquete{
+      width: 100%;
+      margin-bottom: 5%;
+    }
+  }
 }

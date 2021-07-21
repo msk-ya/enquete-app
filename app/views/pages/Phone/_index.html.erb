@@ -1,0 +1,32 @@
+
+   <% enquetes.each do |enquete| %>
+     <table>
+         <tr>
+           <th> <%= image_tag("/svg/enquete.svg",size:"25x25",style:"color:white")%>タイトル</th>
+           <td>
+             <%= link_to enquete.title, "#" %><br>
+              <span>受付中</span>
+           </td>
+         </tr>
+
+          <tr>
+            <th>投稿日</th>
+            <td><%= l enquete.created_at, format: :day %></td>
+         </tr>
+
+          <tr>
+            <th>期限</th>
+            <td><%= l enquete.limit, format: :default %></td>
+         </tr>
+
+         <tr>
+           <td colspan="2">
+              <%= link_to  enquete_results_path(enquete), class: "enquete-answer-button" do %>
+                <%= image_tag("/svg/write_white.svg",size:"20x20",style:"color:white")%>アンケートに答える
+              <% end %>
+           </td>
+         </tr>
+
+     </table>
+   <% end %>
+  
