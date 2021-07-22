@@ -330,6 +330,14 @@
   }
   
 }
+/*受付期間のステータス（受付中)*/
+.status_reception_ok{
+  background-color: blue;
+}
+/*受付期間のステータス（受付中)*/
+.status_reception_finish{
+  background-color: red;
+}
 /* ipad */
 @media screen and (max-width: 769px) {
   .index-page-phone{

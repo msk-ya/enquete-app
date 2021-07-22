@@ -1,3 +1,8 @@
+ .result-main h3{
+    width: 100%;
+    text-align: center;
+ }
+ 
  .result-info{
     border:1px solid #c0c0c0;
     width:50%;
@@ -10,6 +15,7 @@
     font-weight: bold;
     color: rgb(96, 96, 233);
     margin-bottom: 30px;
+    text-align: center;
   }
   .text-result-header{
     margin: 30px 0;
@@ -27,8 +33,14 @@
    
 
   }
+  .result_back{
+    position:relative;
+    left:25%;
+    top:-20px;
+  }
   .text-result-content{
     border: 1px dotted #c0c0c0;
+    background-color: #fff;
     display: table;
     overflow: scroll;
     position: relative;
@@ -100,5 +112,12 @@
      progress::-ms-fill {
         background-color: #c0c0c0;
     }
+    
   }
+}
+/*回答がまだない時の処理*/
+.result-no-select, .result-no-text{
+  text-align: center;
+  color: blue;
+  margin-top: 2%;
 }

@@ -1,0 +1,34 @@
+
+@media screen and (max-width: 767px) {
+    .result-main{
+      text-align: center;
+      .result-info{
+          width: 100%;
+          left: 0
+      }
+      .result_back{
+        display: flex;
+        width: 20%;
+         background-color: rgb(54, 179, 54);
+         color: #fff;
+         justify-content: center;
+         padding: 10px 0;
+         left: 0;
+         text-decoration: none;
+      }
+      .text-result-info{
+        width: 100%;
+        left: 0;
+      }
+      .select-result--main-table{
+        width: 100%;
+        left: 0;
+      }
+      .text-result-content{
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+      }
+    }
+  /* main終了 */
+}

@@ -1,22 +1,26 @@
 <h3 class="text-result-header">【入力アンケート集計】</h3>
 <div class="text-main">
-<% titles.each_with_index do |title, i| %>
-  <section>
-    <h2 class="text-result-info"><%= title %></h2>
-    <div>
-     <% @texts.each_with_index do |text,i| %>
-      <% if text[title].present? %>
-        <div class="text-result-content">
-          <%= text[title] %>
+<% if titles.count > 0 %>
+    <% titles.each_with_index do |title, i| %>
+      <section>
+        <h2 class="text-result-info"><%= title %></h2>
+        <div>
+        <% @texts.each_with_index do |text,i| %>
           <% if text[title].present? %>
-            <div>
-              <%= "投稿者:#{@user_names[i][title].to_s}"  %>
+            <div class="text-result-content">
+              <%= text[title] %>
+              <% if text[title].present? %>
+                <div>
+                  <%= "投稿者:#{@user_names[i][title].to_s}"  %>
+                </div>
+              <% end %>
             </div>
           <% end %>
+        <% end %>
         </div>
-      <% end %>
-     <% end %>
-    </div>
-  </section>
+      </section>
+    <% end %>
+<% else%>
+  <div class="result-no-text">まだ回答がありません。</div>
 <% end %>
 </div>

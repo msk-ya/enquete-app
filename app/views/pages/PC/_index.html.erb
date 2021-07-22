@@ -14,7 +14,7 @@
            <%= link_to  result_path(enquete.id) do %>
              <%= image_tag("/svg/enquete.svg",size:"25x25",style:"color:white")%><%= enquete.title %>
            <% end %>
-           <span>受付中</span>
+           <%= enquete.reception_status %>
         </td>
         <td><%= l enquete.created_at, format: :day %></td>
         <td><%= l enquete.limit, format: :default %></td>
