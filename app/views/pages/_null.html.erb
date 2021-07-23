@@ -1,1 +1,4 @@
-<h1>null</h1>
+<div class="area_present_enquete">
+  <p><%= params[:area].present? ? "【#{params[:area]}エリアアンケート】" : "【山梨全域エリアアンケート】" %></p>
+  <p class="no-enquete">まだアンケートがありません。</p>
+</div>

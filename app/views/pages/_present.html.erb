@@ -1,5 +1,5 @@
 <div class="area_present_enquete">
-  <p><%= "【#{params[:area]}エリアアンケート】" %></p>
+ <p><%= params[:area].present? ? "【#{params[:area]}エリアアンケート】" : "【山梨全域エリアアンケート】" %></p>
   <table class="page-list-table">
     <thead>
       <tr>

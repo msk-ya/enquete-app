@@ -112,4 +112,29 @@
       margin-bottom: 5%;
     }
   }
+  /*県内の写真のページ*/
+.img_area{
+  width: 100%;
+  margin-bottom: -2%;
+  a{
+    width: 90%;
+    background-color: #1a813d;
+    padding: 10px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #fff
+  }
+  a:hover{
+    background-color: rgb(30, 222, 30);
+  }
+  img{
+    width: 95%;
+    position: relative;
+    left: 5%;
+    top: 2%;
+    background-color: #c0c0c0;
+  }
+}
 }

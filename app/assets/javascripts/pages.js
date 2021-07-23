@@ -7,4 +7,7 @@ window.addEventListener("turbolinks:load",function(){
     const objTop = scrollObject.offsetTop;
     scrollTo(0, objTop );
   }
+  $(function () {
+    $('img[usemap]').rwdImageMaps();
+  })
 });
