@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:top, :index, :area]
+  skip_before_action :authenticate_user!, only: [:top, :index, :area, :recently]
   layout 'page'
 
   def top
@@ -32,5 +32,10 @@ class PagesController < ApplicationController
        @enquetes = Enquete.all
     end
   end
+
+  def recently
+    
+  end
+  
   
 end

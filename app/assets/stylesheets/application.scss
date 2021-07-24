@@ -13,8 +13,10 @@
 @import "jquery-ui/datepicker";
 
 
-body{
+body, html{
   background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
 }
 .phone_header{
   display: none;
@@ -64,6 +66,20 @@ body{
 }
 .header-img{
   width: 100%;
+}
+//パンくずリスト
+.breadcrumbs{
+  margin: 24px 0 -15px 12px;
+  .bread-content{
+    a{
+      text-decoration: none;
+    }
+    a:after{
+      content: ">";
+      margin: 0 5px;
+      color: #000;
+    }
+  }
 }
 .page-main{
   margin: 0;
@@ -244,5 +260,20 @@ body{
           width: 100%;
     }
  /**********************ハンバーガーメニュー終了**********************************/  
-   
+          //パンくずリスト
+      .breadcrumbs{
+        margin: 12px 0 -3px 12px;
+        font-size: 14px;
+        .bread-content{
+          a{
+            text-decoration: none;
+          }
+          a:after{
+            content: ">";
+            margin: 0 2px;
+            color: #000;
+          }
+        }
+      }
+    //パンクズりすと終了
   }

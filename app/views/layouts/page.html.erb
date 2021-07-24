@@ -24,8 +24,16 @@
         <%= render '/layouts/phone_header' %>
       <img src="/custom.jpg" alt="header-img" class="header-img">
     </header>
-    
+
+
+   <!-- パンくずリスト -->
+   <div class="breadcrumbs">
+     <%= yield(:bread) %>
+   </div>
+
     <main class="page-main">
+        
+       </div>
        <article class="page-article">
           <%= yield %>
        </article>

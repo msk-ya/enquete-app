@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       get :top
       get :area
+      get :recently
     end
     
   end
