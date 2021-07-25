@@ -85,6 +85,24 @@ end
     end
     return record
   end
+
+  #新規作成アンケート（３日以内)
+  def self.search_new_enquete
+    today = Date.today
+    after_three_date = today + 3
+    array = []
+    all.each do |enquete|
+      record_day = enquete.created_at.to_date
+      
+      ##当日以上三日以内のアンケートを格納
+      if record_day >= today && record_day <= after_three_date
+         array << enquete
+      end
+
+    end
+    return array
+  end
+  
  
 
 

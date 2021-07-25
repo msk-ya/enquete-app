@@ -34,7 +34,7 @@ class PagesController < ApplicationController
   end
 
   def recently
-    
+    @newEnquetes = Enquete::search_new_enquete
   end
   
   

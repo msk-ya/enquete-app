@@ -2,10 +2,30 @@
 
 <section>
   <h3 class="site-info">アンケート一覧</h3>
-  <p class="aggregate_info">投稿3日以内の新着アンケートです。</p>
+  <p class="aggregate_info"> <%= image_tag('/svg/new.svg', size: '40x40') %>投稿3日以内の新着アンケートです。</p>
+
+　 <% if @newEnquetes.count > 0 %>
+    <p class="aggregate_info">アンケートの集計をご覧になりたい場合はアンケートのタイトルからアクセスしてください。</p>
+
+    <!-- パソコン版のテーブル -->
+    <div class="index-page-pc">
+       <%= render '/pages/PC/index', {enquetes: @newEnquetes} %>
+    </div>
+
+    <!-- スマホ版のテーブル -->
+    <div class="index-page-phone">
+       <%= render '/pages/Phone/index', {enquetes: @newEnquetes} %>
+    </div>
+   
+
+  <% else %>
+    <div class="index-no-enquete">アンケートがありません。</div>
+  <% end %>
+
+
 
 </section>
-<div class="enquete-select-area">
+<div class="enquete-select-area" >
   <div class= "new-enquete">
    <%= link_to  pages_path do  %>
      <span>↩︎</span>戻る
