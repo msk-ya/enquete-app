@@ -102,6 +102,26 @@ body, html{
   margin-right: 1%;
   flex-basis: 23%; 
 }
+footer{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  div{
+    width: 100%;
+    background-color: black;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
 /*--スマートフォン対応--------------------------------------------------*/
 
 @media screen and (max-width: 767px){
