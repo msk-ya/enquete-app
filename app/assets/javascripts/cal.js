@@ -78,7 +78,7 @@ function createProcess(year, month) {
 
 function sendDay(year, month, day){
   const sendData = String(year) + "/" + String(toDoubleDigits(month)) + "/" + String(toDoubleDigits(day));
-  window.location = "http://localhost:3000/pages?date=" + sendData;
+  window.location = "https://yamanasi-enquete.herokuapp.com/pages?date=" + sendData;
  /* $.ajax({
     url: 'http://localhost:3000/pages?date=' + sendData,
     type: 'GET'
