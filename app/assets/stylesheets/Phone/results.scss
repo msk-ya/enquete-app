@@ -31,4 +31,31 @@
       }
     }
   /* main終了 */
+  //アンケート投稿ページのcss
+.enquete-ansewr-main{
+  display: flex;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  .area{
+    width: 100%;
+    background-color: rgb(231, 226, 226);
+    padding: 30px 80px;
+    .group{
+      width: 100%;
+      margin-bottom: 20px;
+      input[type='text']{
+        width: 100%;
+        border: 1px solid  #c0c0c0;
+        height: 40px;
+       }
+      input[type='text']:focus{
+      border: 3px solid green;
+      outline: 0;
+      }
+    }
+
+  }
+}
+//アンケート投稿ページのcss終了
 }

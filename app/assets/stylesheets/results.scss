@@ -121,3 +121,32 @@
   color: blue;
   margin-top: 2%;
 }
+
+
+
+/***********************************************************************************************************************************************/
+//アンケート投稿ページのcss
+.enquete-ansewr-main{
+  display: flex;
+  justify-content: center;
+  .area{
+    width: 60%;
+    background-color: rgb(231, 226, 226);
+    padding: 30px 80px;
+    .group{
+      margin-bottom: 20px;
+      input[type='text']{
+        width: 100%;
+        border: 1px solid  #c0c0c0;
+        height: 40px;
+       }
+      input[type='text']:focus{
+      border: 3px solid green;
+      outline: 0;
+      }
+      
+    }
+    
+  }
+  
+}

@@ -4,7 +4,7 @@
          <tr>
            <th> <%= image_tag("/svg/enquete.svg",size:"25x25",style:"color:white")%>タイトル</th>
            <td>
-             <%= link_to enquete.title, "#" %><br>
+             <%= link_to enquete.title, result_path(enquete.id) %><br>
               <span>受付中</span>
            </td>
          </tr>

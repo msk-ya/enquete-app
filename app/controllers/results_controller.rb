@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :new]
   def index
     @results = Result.all
   end

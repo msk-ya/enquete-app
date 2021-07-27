@@ -2,9 +2,9 @@
   <%= f.hidden_field :enquete_id, value: @enquete.id %>
   <h3 class="p-3 text-center">アンケート:【<%= @enquete.title %>】</h3>
   <p class="text-center"><%= @enquete.content %></p>
-  <div class="form-group mb-3">
+  <div class="group">
     <label>投稿者名<span class="text-danger">(*任意です)</span></label>
-    <%= f.text_field :user_name, class:"form-control" %>
+    <%= f.text_field :user_name  %>
   </div>
   <% @questions.each do |q| %>
       <h5 class="bg-success p-1 text-center text-white"><%= q.content %></h5>
