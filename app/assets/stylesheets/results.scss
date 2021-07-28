@@ -133,19 +133,81 @@
     width: 60%;
     background-color: rgb(231, 226, 226);
     padding: 30px 80px;
+    
     .group{
       margin-bottom: 20px;
+      
       input[type='text']{
         width: 100%;
         border: 1px solid  #c0c0c0;
         height: 40px;
+        margin-bottom: 20px;
        }
       input[type='text']:focus{
       border: 3px solid green;
       outline: 0;
       }
+    }
+    //アンケートタイトル
+    h3{
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h3::before{
+      content: "タイトル:";
+    }
+    
+    //アンケート回答補足説明書
+    h4{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 16px;
+    }
+    h4:before{
+      content: "【";
+    }
+    h4:after{
+      content: "】";
+    }
+    //タイトルヘッダー
+    h5{
+      background-color: rgb(61, 148, 61);
+      border-bottom: 6px double rgb(250, 233, 236);
+      color: rgb(250, 233, 236);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 8px;
+    }
+    //選択タイプの（チェックボックス)
+    input[type="radio"]{
+      width: 1.2em;
+      height: 1.2em;
+    }
+    textarea{
+      width: 100%;
+      border: 1px solid  #c0c0c0;
+      height: 120px;
+      margin-bottom: 15px;
       
     }
+    textarea:focus{
+       border: 3px solid green;
+       outline: 0;
+    }
+    input[type="submit"]{
+      display: block;
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 15px 0;
+      background-color: rgb(96, 96, 233);
+      border: 1px solid blue;
+      color: #fff;
+    }
+     input[type="submit"]:hover{
+       background-color: rgb(149, 149, 228);
+     }
     
   }
   

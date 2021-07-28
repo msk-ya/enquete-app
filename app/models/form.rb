@@ -8,7 +8,7 @@ class Form < ApplicationRecord
        <p class='text-center text-primary'>#{content}</p>
        <input type='hidden' name='text_title[][title]' value=#{question.content} />
        <input type='hidden' name='form_type[][type]' value=0 />
-       <textarea name='edit[][text]' rows='4'　required　 class='form-control answer-text'></textarea>
+       <textarea name='edit[][text]' rows='4'　required　 class='answer-text'></textarea>
     "
     self.html = html
     self.title = content
