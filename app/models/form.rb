@@ -20,7 +20,7 @@ class Form < ApplicationRecord
   def select_question(id, params)
     question = Question.find id
     array = params.split(",");
-    html = "<h4>#{array[0]}</h4>"
+    html = "<h4>【#{array[0]}】</h4>"
     html += "<input type='hidden' name='select_title[][title]' value=#{question.content} />"
     html += "<input type='hidden' name='form_type[][type]' value=1 />"
     array.each_with_index do |param,index|

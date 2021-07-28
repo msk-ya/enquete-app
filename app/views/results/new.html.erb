@@ -1,6 +1,11 @@
 <div class="enquete-ansewr-main">
     <div class="area">
+       <!-- パンくずリスト -->
+      <div class="breadcrumbs-results">
+        <%= results_answer_bread %>
+      </div>
+      
       <%= render 'form' %>
-      <%= link_to "⬅︎一覧に戻る", pages_index_path %>
+      <%= link_to "⬅︎一覧に戻る", pages_index_path, class:'a' %>
     </div>
 </div>

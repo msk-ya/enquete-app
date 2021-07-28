@@ -1,5 +1,29 @@
 
 @media screen and (max-width: 767px) {
+  //パンくずリスト
+      .breadcrumbs-results{
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        font-size: 14px;
+
+        .bread-content{
+          display: block;
+          margin-bottom: 28px;
+          a{
+            display: block;
+            text-decoration: none;
+            padding: 0;
+            color: red;
+          }
+          a:after{
+            content: ">";
+            margin: 0 2px;
+            color: #000;
+          }
+        }
+      }
+    //パンクズりすと終了
     .result-main{
       text-align: center;
       .result-info{
@@ -66,7 +90,7 @@
        margin-top: -1%;
        margin-bottom: 5%;
      }
-     a{
+     .a{
        background-color: #fff;
        display: block;
        padding: 12px 0;

@@ -1,3 +1,21 @@
+    //パンくずリスト
+      .breadcrumbs-results{
+        margin: 1px 0  45px 0;
+        font-size: 14px;
+        .bread-content{
+          a{
+            text-decoration: none;
+          }
+          a:after{
+            content: ">";
+            margin: 0 2px;
+            color: #000;
+          }
+        }
+      }
+    //パンクズりすと終了
+ 
+ 
  .result-main h3{
     width: 100%;
     text-align: center;
@@ -162,12 +180,7 @@
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size: 16px;
     }
-    h4:before{
-      content: "【";
-    }
-    h4:after{
-      content: "】";
-    }
+    
     //タイトルヘッダー
     h5{
       background-color: rgb(61, 148, 61);

@@ -17,5 +17,15 @@ module ResultsHelper
   def enquete_rate(num, max)
     return (num.to_f / max.to_f * 100).to_i
   end
+
+  #アンケートパンクズリスト
+  def results_answer_bread
+      return "
+        <div class='bread-content'>
+          <a href= '/' >HOME</a>
+          <a href= '/pages/index'>アンケート一覧</a>
+          アンケート:#{ @enquete.title }
+        </div> ".html_safe
+  end
   
 end
