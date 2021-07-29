@@ -14,8 +14,13 @@
         }
       }
     //パンクズりすと終了
- 
- 
+    //集計ページのパンくずリスト
+   .agregate-bread{
+     margin: 0 auto;
+     margin-top: 2%;
+     width: 50%;
+   }
+  //集計ページのパンくずリスト終了
  .result-main h3{
     width: 100%;
     text-align: center;
@@ -137,7 +142,12 @@
 .result-no-select, .result-no-text{
   text-align: center;
   color: blue;
+  width: 50%;
+  margin: 0 auto;
   margin-top: 2%;
+  background-color: #fff;
+  padding: 10px 0;
+  position: relative;
 }
 
 

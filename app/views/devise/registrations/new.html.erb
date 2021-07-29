@@ -20,7 +20,7 @@
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上で入力ください。)</em>
+      <em>(<%= @minimum_password_length %> 文字以上で入力ください。)</em><br>
       <span>(必須です。)</span>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password", placeholder:"必須です。" %>

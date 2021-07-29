@@ -24,6 +24,11 @@
         }
       }
     //パンクズりすと終了
+    //集計ページのパンくずリスト
+   .agregate-bread{
+     width: 100%;
+   }
+   //集計ページのパンくずリスト終了
     .result-main{
       text-align: center;
       .result-info{
@@ -39,6 +44,7 @@
          padding: 10px 0;
          left: 0;
          text-decoration: none;
+         margin-left: 2%;
       }
       .text-result-info{
         width: 100%;
@@ -102,4 +108,11 @@
   }
 }
 //アンケート投稿ページのcss終了
+/*回答がまだない時の処理*/
+.result-no-select, .result-no-text{
+  width: 100%;
+  margin: 0 auto;
+
+ }
+ /*回答がまだない時の処理終了*/
 }

@@ -27,5 +27,15 @@ module ResultsHelper
           アンケート:#{ @enquete.title }
         </div> ".html_safe
   end
+
+  #アンケートパンクズリスト
+  def results_aggregate_bread
+      return "
+        <div class='bread-content'>
+          <a href= '/' >HOME</a>
+          <a href= '/pages/index'>アンケート一覧</a>
+          集計タイトル:#{ @enquete.title }
+        </div> ".html_safe
+  end
   
 end
