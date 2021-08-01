@@ -13,9 +13,12 @@
        </div>
        <p>【質問内容】</p>
        <% if @question.form_count_check >1  %>
-        <%= link_to "内容追加", "#", class:"btn btn-primary mb-1"%>
+         <%= form_with url:add_select_form_path(@forms.first.id),method: :get do |f| %>
+           <%= f. text_field :title %>
+           <%= f.submit "内容追加" %>
+         <% end %>
        <% end %>
-       <ul class="modal-ul">
+       <ul class="modal-ul" id="modal-ul">
            <% @forms.each do |form| %>
             <% form.title.split(',').each_with_index do |text, index| %>
               <% if (@question.form_count_check >1 && index >0) || (@question.form_count_check == 1)  %> 

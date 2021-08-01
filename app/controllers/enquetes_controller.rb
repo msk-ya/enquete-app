@@ -3,8 +3,7 @@ class EnquetesController < ApplicationController
 
   
   def index
-    @enquetes = Enquete.all
-    @user = User.find( params[:user_id] )
+    @enquetes = current_user.enquetes
   end
 
   def show
@@ -76,6 +75,6 @@ class EnquetesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def enquete_params
-      params.require(:enquete).permit(:title, :content, :limit, :area)
+      params.require(:enquete).permit(:title, :content, :limit, :area, :user_id)
     end
 end

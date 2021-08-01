@@ -13,7 +13,7 @@
       <div class="p-5 bg-light shadow">
         <%= form_with model: @enquete, local: true do |f| %>
 
-          <%= f.hidden_field :user_id, value: @user.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
 
           <div class="form-group mb-4">
             <label>タイトル</label>

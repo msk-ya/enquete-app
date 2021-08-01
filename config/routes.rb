@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :forms, only:[:create] do
     member do
       get 'new'
+      get 'add_select'
     end
     post :delete, on: :collection
   end

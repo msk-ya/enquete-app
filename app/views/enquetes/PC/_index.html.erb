@@ -1,0 +1,76 @@
+<% if  enquetes.length >0 %>
+  <table class="admin-list-table">
+  <thead>
+    <tr>
+      <th colspan="3">リスト</th>
+      <th rowspan="2">集計</th>
+    </tr>
+
+    <tr>
+      <th class="th">タイトル</th>
+      <th class="th">編集</th>
+      <th class="th">削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  enquetes.each do |enquete| %>
+      <tr id="enquete-tr-<%= enquete.id %>">
+        
+       <td class="align-middle"><%= link_to enquete.title, enquete_results_path(enquete) %></td>
+
+        <td>
+          <button class="question-edit-btn" id="edit-btn-<%= enquete.id %>">内容編集</button>
+        </td>
+           
+        <td>
+           <%= link_to "削除", 
+              enquete_path(enquete.id), 
+              data:{confirm: "削除しますか？"}, 
+              method: :delete, 
+              remote: true,
+              class:"enquete-lists a",
+              id: "enquete-list-#{enquete.id}" 
+          %>
+        </td>
+
+        <td>
+          <%= link_to "結果",
+              result_path(enquete.id),
+              class:"questin-delete a"
+          %>
+        </td>
+
+      </tr>
+      <tr id="enquete-question-<%= enquete.id %>" class="tr-questions">
+        <td colspan="4">
+          <%= link_to "質問追加", question_path(enquete), class:"btn btn-primary mb-1" %>
+          <ul>
+            <% enquete.questions.each do |question| %>
+             <li id="enquete-question-li-<%= question.id %>">Q.<%= question.content %></li>
+              <%= link_to "内容確認", 
+                  show_modal_question_path(question),
+                  remote:true, 
+                  class:"btn btn-primary mb-1 mt-1",
+                  id: "question-modal-confirm-#{question.id}"
+               %>
+              <%= link_to "削除",
+                  delete_question_path(question),
+                  data:{ confirm: "削除しますか？"},
+                  method: :delete,
+                  remote: true,
+                  class:"btn btn-danger mb-1 mt-1 questin-delete a",
+                  id: "question-delete-#{question.id}"
+              %>
+              
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %> 
+  <div class="p-5 bg-light border text-center">
+    まだデータがありません。
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+var item = "<%= @add_item %>";
+var form = "<%= @formId %>";
+var ul = document.getElementById("modal-ul");
+var count = ul.childElementCount;
+var li = document.createElement('li');
+li.id = "li-" + count;
+
+
+var div = document.createElement('div');
+div.className = "list align-middle";
+div.textContent = "Q." + item;
+
+var delarea = document.createElement('div');
+delarea.className = "text-end";
+
+var delbtt = document.createElement('button');
+delbtt.textContent = "削除";
+delbtt.className = "btn btn-danger btn-sm modal-select-delete";
+delbtt.id = "delete-select-" + form + "-" + count;
+
+
+
+delarea.appendChild(delbtt);
+li.appendChild(div);
+li.appendChild(delarea);
+ul.appendChild(li);
+

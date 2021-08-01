@@ -40,6 +40,14 @@ class FormsController < ApplicationController
    form = Form.find( params[:id] )
    form.delete_item(params[:title].to_i)
  end
+
+ #選択追加
+ def add_select
+   @form = Form.find( params[:id] ).add_select( params[:title] )
+   @formId = params[:id]
+   @add_item = params[:title];
+ end
+ 
  
 
 

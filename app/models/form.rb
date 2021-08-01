@@ -85,5 +85,14 @@ class Form < ApplicationRecord
     end
     return array
   end
+
+  ##選択タイプのタイトルの追加
+  def add_select(add_title)
+    titles = self.title
+    titles += "#{ add_title}," 
+    self.select_question(self.question.id, titles)
+    self.save
+  end
+  
   
 end

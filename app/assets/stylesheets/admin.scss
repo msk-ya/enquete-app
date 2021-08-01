@@ -1,0 +1,129 @@
+.phone-list { display: none;}
+
+//タイトル
+.manager_list_title{
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2%;
+  h1{
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+//タイトル終了
+
+//新規ホームボタン
+.manager_buttons{
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  a{
+    background-color: rgb(97, 100, 82);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  a:hover{
+    background-color: rgb(151, 156, 125);
+  }
+}
+//新規ホームボタン終了
+
+//ユーザーのアンケートリスト
+.admin-list-table{
+  width: 70%;
+  margin: 0 auto;
+  border: 0px none !important;
+  background-color: #fff;
+  th{
+    background-color: #000;
+    color: rgb(222, 222, 251);
+  }
+ 
+  td{
+    button, .a{
+      background-color: #2C7CFF;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 17px 0;
+      display: block;
+      border: none;
+    }
+    button:hover, a:hover{
+      background-color: #c0c0c0;
+    }
+  }
+}
+//ユーザーのアンケートリスト終了
+
+
+/**************************************************************************************************/
+@media screen and ( max-width: 767px) {
+  
+  //タイトル
+  .manager_list_title{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    h1{
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  }
+  //タイトル終了
+
+  //新規ホームボタン
+.manager_buttons{
+  width: 70%;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  a{
+    background-color: rgb(97, 100, 82);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  a:hover{
+    background-color: rgb(151, 156, 125);
+  }
+}
+//新規ホームボタン終了
+
+  //ユーザーのアンケートリスト
+.admin-list-table{
+  width: 100%;
+  margin: 0;
+  border: 0px none !important;
+  background-color: #fff;
+  th{
+    background-color: #a0a0a0;
+    color: rgb(222, 222, 251);
+  }
+ 
+  td{
+    button, .a{
+      background-color: #2C7CFF;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 17px 0;
+      display: block;
+      border: none;
+    }
+    button:hover, a:hover{
+      background-color: #c0c0c0;
+    }
+  }
+}
+//ユーザーのアンケートリスト終了
+}

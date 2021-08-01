@@ -1,80 +1,21 @@
-<div class="text-center mt-4 font-weight-bold mb-5">
+<div class="manager_list_title">
   <h1>アンケート一覧</h1>
 </div>
 
+<div class="manager_buttons">
+  <%= link_to "HOMEへ", root_path %>
+  <%= link_to "新規登録", new_enquete_path(params:{user_id:current_user.id}) %>
+</div>
+
+
 <div id="user-modal" class="modal" tabindex="-1" role="dialog"></div>
 
-<%= link_to "HOMEへ", root_path, class:"btn btn-info mb-3" %>
-<%= link_to "新規登録", new_enquete_path(params:{user_id: @user.id}), class:"btn btn-primary mb-3" %>
-<% if  @enquetes.length >0 %>
-  <table class="table">
-  <thead>
-      <th class="bg-primary text-white font-weight-bold text-center">id</th>
-      <th class="bg-primary text-white font-weight-bold text-center">タイトル</th>
-      <th class="bg-primary text-white font-weight-bold text-center w-50">概要</th>
-      <th class="bg-primary text-white font-weight-bold text-center">
-      </th>
-  <tr>
-  </tr>
-  </thead>
-  <tbody>
-    <%  @enquetes.each do |enquete| %>
-      <tr id="enquete-tr-<%= enquete.id %>">
-        <td class="align-middle"><%= enquete.id %></td>
-        <td class="align-middle"><%= enquete.title %></td>
-        <td class="align-middle text-center">
-          <div>
-            <%= enquete.content %>     
-          </div>
-        </td>
-        <td>
-          <button class="question-edit-btn btn btn-success" id="edit-btn-<%= enquete.id %>">内容編集</button>
-          <%= link_to "確認", enquete_results_path(enquete), class:"btn btn-primary mr-3" %>
-          <%= link_to "削除", 
-              enquete_path(enquete.id), 
-              data:{confirm: "削除しますか？"}, 
-              method: :delete, 
-              remote: true,
-              class:"btn btn-danger mb-1 mt-1 enquete-lists",
-              id: "enquete-list-#{enquete.id}" 
-          %>
-          <%= link_to "結果",
-              result_path(enquete.id),
-              class:"btn btn-success mb-1 mt-1 questin-delete"
-          %>
-        </td>
-      </tr>
-      <tr id="enquete-question-<%= enquete.id %>" class="tr-questions">
-        <td colspan="4">
-          <%= link_to "質問追加", question_path(enquete), class:"btn btn-primary mb-1" %>
-          <ul>
-            <% enquete.questions.each do |question| %>
-             <li id="enquete-question-li-<%= question.id %>">Q.<%= question.content %></li>
-              <%= link_to "内容確認", 
-                  show_modal_question_path(question),
-                  remote:true, 
-                  class:"btn btn-primary mb-1 mt-1",
-                  id: "question-modal-confirm-#{question.id}"
-               %>
-              <%= link_to "削除",
-                  delete_question_path(question),
-                  data:{ confirm: "削除しますか？"},
-                  method: :delete,
-                  remote: true,
-                  class:"btn btn-danger mb-1 mt-1 questin-delete",
-                  id: "question-delete-#{question.id}"
-              %>
-              
-            <% end %>
-          </ul>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<% else %> 
-  <div class="p-5 bg-light border text-center">
-    まだデータがありません。
-  </div>
-<% end %>
+<div class="pc-list">
+  <%= render '/enquetes/PC/index', {enquetes: @enquetes} %>
+</div>
+
+<div class="phone-list">
+  <%= render '/enquetes/Phone/index', {enquetes: @enquetes} %>
+</div>
+
 
