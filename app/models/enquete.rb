@@ -16,13 +16,13 @@ class Enquete < ApplicationRecord
 
 #一覧表示、質問別に集計
 #**********************************************************************************************************************************
-def enquete_aggregate
+def enquete_aggregate(forms)
   select_results = []                                               #=>選択タイプの集計
   text_results = []                                                 #=>入力タイプのテキストまとめ
   text_names = []                                                    #=>入力タイプの投稿者集計
 
   #選択タイプの集計の雛形配列の準備(formモデルにて記述)
-    selects_array =  Form.SelectItems
+    selects_array =  Form::SelectItems(forms)
    
   self.results.each do |result|
     #テキストタイプの結果格納
@@ -36,6 +36,7 @@ def enquete_aggregate
     text_names.push(name_hash)                                      #=>全体の名前に格納
 
    
+    
 
     #選択タイプの結果格納
     result.select_title.each_with_index do |title, i| 
@@ -104,7 +105,18 @@ end
     return array
   end
   
- 
+  ##選択式のquestion取得
+  def get_select_form
+    form_array = []
+
+    questions = self.questions
+    questions.each do |question|
+       question.forms.each do |form|
+         form_array << form
+       end
+    end
+    return form_array
+  end
 
 
 end

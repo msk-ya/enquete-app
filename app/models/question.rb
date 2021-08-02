@@ -9,4 +9,6 @@ class Question < ApplicationRecord
     return num
   end
 
+  
+
 end

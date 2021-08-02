@@ -5,8 +5,10 @@ class ResultsController < ApplicationController
   end
 
   def show
+    
     @enquete = Enquete.find( params[:id] )
-    @resultDatas = @enquete.enquete_aggregate
+    @forms = @enquete.get_select_form
+    @resultDatas = @enquete.enquete_aggregate(@forms)
     @texts = @resultDatas[0]
     @selects = @resultDatas[1]
     @user_names = @resultDatas[2]

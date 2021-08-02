@@ -69,11 +69,33 @@ class Form < ApplicationRecord
 
   end
   ###########################################################
+=begin  ##選択タイプのアンケートの集計の雛形の配列を作成する
+  def selectItems
+    array = []                       
+    hash = {}                         #=>各選択型フォームのアイテムのハッシュ
+    data = self.title.split(',')
+    if data.count >1
+      data.each do |dt|
+        hash[dt] = 0
+      end
+      hash.present? ?array.push(hash) : ""
+    end
+    return array
+  end
+=end  
+
+  ##選択タイプのタイトルの追加
+  def add_select(add_title)
+    titles = self.title
+    titles += "#{ add_title}," 
+    self.select_question(self.question.id, titles)
+    self.save
+  end
+
   ##選択タイプのアンケートの集計の雛形の配列を作成する
-  
-  def self.SelectItems
-    array = []                           #=>全選択型フォーム分の総合配列
-    all.each do |form|
+  def self.SelectItems(forms)
+    array = []                           #=>複数選択型フォーム分の総合配列
+    forms.each do |form|
        hash = {}                         #=>各選択型フォームのアイテムのハッシュ
        data = form.title.split(',')
        if data.count >1
@@ -85,14 +107,5 @@ class Form < ApplicationRecord
     end
     return array
   end
-
-  ##選択タイプのタイトルの追加
-  def add_select(add_title)
-    titles = self.title
-    titles += "#{ add_title}," 
-    self.select_question(self.question.id, titles)
-    self.save
-  end
-  
   
 end
