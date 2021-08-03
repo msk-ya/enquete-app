@@ -42,15 +42,15 @@
 
       </tr>
       <tr id="enquete-question-<%= enquete.id %>" class="tr-questions">
-        <td colspan="4">
-          <%= link_to "質問追加", question_path(enquete), class:"btn btn-primary mb-1" %>
+        <td colspan="4" class="hidden-td">
+          <%= link_to "質問追加", question_path(enquete), class:"add-question" %>
           <ul>
             <% enquete.questions.each do |question| %>
              <li id="enquete-question-li-<%= question.id %>">Q.<%= question.content %></li>
-              <%= link_to "内容確認", 
+             <div class="hidden-buttons">
+               <%= link_to "内容確認", 
                   show_modal_question_path(question),
                   remote:true, 
-                  class:"btn btn-primary mb-1 mt-1",
                   id: "question-modal-confirm-#{question.id}"
                %>
               <%= link_to "削除",
@@ -58,9 +58,10 @@
                   data:{ confirm: "削除しますか？"},
                   method: :delete,
                   remote: true,
-                  class:"btn btn-danger mb-1 mt-1 questin-delete a",
+                  class:"questin-delete",
                   id: "question-delete-#{question.id}"
               %>
+             </div>
               
             <% end %>
           </ul>
