@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "forms.scss";
 @import "enquetes.scss";
 @import "results.scss";
@@ -12,6 +14,7 @@
 @import "jquery-ui/core";
 @import "jquery-ui/theme";
 @import "jquery-ui/datepicker";
+
 
 
 body, html{

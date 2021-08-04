@@ -3,8 +3,12 @@
 </div>
 
 <div class="manager_buttons">
-  <%= link_to "HOMEへ", root_path %>
-  <%= link_to "新規登録", new_enquete_path(params:{user_id:current_user.id}) %>
+  <%= link_to root_path do %>
+     <%= icon("fas", "home") %>HOMEへ
+  <% end %>&nbsp;
+  <%= link_to new_enquete_path(params:{user_id:current_user.id}) do %>
+     <%= icon("fas", "plus") %>新規登録
+  <% end %>
 </div>
 
 

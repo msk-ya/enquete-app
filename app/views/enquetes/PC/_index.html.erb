@@ -19,25 +19,28 @@
        <td class="align-middle"><%= link_to enquete.title, enquete_results_path(enquete) %></td>
 
         <td>
-          <button class="question-edit-btn" id="edit-btn-<%= enquete.id %>">内容編集</button>
+          <button class="question-edit-btn" id="edit-btn-<%= enquete.id %>">
+            <%= icon("fas", "pen") %>
+            内容編集
+          </button>
         </td>
            
         <td>
-           <%= link_to "削除", 
-              enquete_path(enquete.id), 
-              data:{confirm: "削除しますか？"}, 
-              method: :delete, 
-              remote: true,
-              class:"enquete-lists a",
-              id: "enquete-list-#{enquete.id}" 
-          %>
+           <%= link_to enquete_path(enquete.id),
+               data:{confirm: "削除しますか？"},
+                method: :delete, 
+                remote: true,
+                class:"enquete-lists a",
+                id: "enquete-list-#{enquete.id}" do %>
+             <%= icon("fas", "trash-alt") %>削除
+           <% end %>
         </td>
 
         <td>
-          <%= link_to "結果",
-              result_path(enquete.id),
-              class:"questin-delete a"
-          %>
+          <%= link_to result_path(enquete.id),
+              class:"questin-delete a" do %>
+           <%= icon("fas", "file") %>結果
+          <% end %>
         </td>
 
       </tr>
@@ -51,8 +54,9 @@
                <%= link_to "内容確認", 
                   show_modal_question_path(question),
                   remote:true, 
-                  id: "question-modal-confirm-#{question.id}"
+                  id: "question-modal-confirm-#{question.id}" do
                %>
+               <% end %>
               <%= link_to "削除",
                   delete_question_path(question),
                   data:{ confirm: "削除しますか？"},
