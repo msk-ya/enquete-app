@@ -22,9 +22,10 @@
 }
 /*サイトボタンエリア */
 .site-enquete-button-div{
-  margin-top: 0.5%;
+  margin-top: 0;
   margin-left: 2%;
   width: 100%;
+  max-width: 100%;
   text-align: left;
   .a{
     background-color: #ecc5c9;
@@ -40,7 +41,6 @@
     width: 95%;
     flex-direction: row;
     align-items: center;
-    margin-left: -5%;
     margin-top: 2%;
   
     

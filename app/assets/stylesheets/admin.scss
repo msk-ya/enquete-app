@@ -44,10 +44,9 @@
   }
  
   td{
-    button, .a{
+    button, .a,.enquete-result{
       background-color: #2C7CFF;
       border: none;
-      border-bottom: 3px solid rgb(37, 37, 226);
       color: #fff;
       text-decoration: none;
       font-size: 14px;
@@ -56,6 +55,9 @@
       padding: 17px 0;
       display: block;
      
+    }
+    .a{
+       background-color: rgb(222, 44, 44);
     }
     button:hover, a:hover{
       background-color: #c0c0c0;
@@ -67,6 +69,7 @@
 //ユーザーのアンケートリスト終了
 //折り畳みテーブルエリア
 .tr-questions{
+    background-color: #f9f9f9;
     .add-question{
       background-color: rgb(18, 168, 18);
       border-bottom: 3px solid rgb(4, 120, 4);
@@ -76,13 +79,14 @@
       text-align: center;
       text-decoration: none;
       width: 15%;
-      padding: 10px 0;
+      padding: 10px 10px;
     }
     .add-question:hover{
        background-color: rgb(97, 212, 97);
     }
     .hidden-td{
       ul{
+        background-color: #f9f9f9;
         li{
           display: block;
           width: 80%!important;
@@ -110,7 +114,7 @@
       }
       .questin-delete{
         background-color: rgb(222, 44, 44);
-        border-bottom: 3px solid rgb(159, 17, 17)
+        border-bottom: 3px solid rgb(159, 17, 17);
       }
       .questin-delete:hover{
         background-color: pink;
@@ -118,6 +122,92 @@
     }
  }
  //折り畳みテーブルエリア終了
+ //------------------------------新規登録関連 ---------------------------------------------------------
+ //アンケート新規登録タイトル
+ .registration-title{
+   font-size: 28px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   margin:50px 0 20px 0;
+
+ }
+ //新規アンケートのエリア
+ .new-enquete-area{
+   width: 30%;
+   margin: 0 auto;
+   background-color: #f9f9f9;
+   padding: 20px 30px;
+   border:1px solid #d8d8d8;
+   .form-parts{
+     display: flex;
+     width: 100%;
+     margin-top: 30px;
+     margin-bottom: 40px;
+     justify-content:first baseline;
+     align-items: center;
+     label{
+       display: block;
+       width: calc( 1/5 * 100%);
+       background: rgb(36, 200, 36);
+       height: 40px;
+       line-height: 42px;
+       color: #fff;
+       font-size: 12px;
+       text-align: center;
+     }
+     input[type="text"], #dp1,select{
+       display: block;
+       width: calc( 4/5 * 100%);
+       border: 1px solid #d9d9d9;
+       height: 40px;
+       font-size: 12px;
+     }
+     input[type="text"]:focus,#dp1:focus{
+       border-radius: 0;
+       border: 3px solid green;
+       outline: none;
+     }
+   }
+   //.form-parts終了
+   label{
+       width: 100%;
+       background: rgb(36, 200, 36);
+       height: 40px;
+       line-height: 42px;
+       color: #fff;
+       font-size: 12px;
+       text-align: center;
+   }
+   textarea{
+     width: 100%;
+     border: 1px solid #d9d9d9;
+     font-size: 14px;
+   }
+   textarea:focus{
+       border-radius: 0;
+       border: 3px solid green;
+       outline: none;
+     }
+   input[type="submit"]{
+     width: 100%;
+     height: 40px;
+     background-color: rgb(116, 116, 248);
+     color: #fff;
+     border: rgb(21, 21, 243);
+   }
+   input[type="submit"]:hover{
+    background-color: rgb(193, 193, 218);
+   }
+ }
+//------------------------------新規登録関連 ---------------------------------------------------------
+
+
+
+
+
+
+
+
 
 /**************************************************************************************************/
 @media screen and ( max-width: 767px) {
@@ -192,8 +282,8 @@
       margin: 2px 0 15px 2px;
       text-align: center;
       text-decoration: none;
-      width: 30%;
-      padding: 10px 0;
+      width: 40%;
+      padding: 10px 10px;
     }
     .add-question:hover{
        background-color: rgb(97, 212, 97);

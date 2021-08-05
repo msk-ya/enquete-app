@@ -1,46 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-    
-      <%= link_to '戻る', params[:page]? root_path : enquetes_path, class:"btn btn-secondary text-white" %>
+<div class="new-enquete-area">
+  <% if @enquete.errors.present? %>
+    <% @enquete.errors.full_messages.each do |err| %>
+      <div class="alert alert-danger"><%= err %></div>
+    <% end %>
+  <% end %>
 
-      <% if @enquete.errors.present? %>
-        <% @enquete.errors.full_messages.each do |err| %>
-          <div class="alert alert-danger"><%= err %></div>
-        <% end %>
-      <% end %>
+  <%= form_with model: @enquete, local: true do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
 
-      <div class="p-5 bg-light shadow">
-        <%= form_with model: @enquete, local: true do |f| %>
-
-          <%= f.hidden_field :user_id, value: current_user.id %>
-
-          <div class="form-group mb-4">
-            <label>タイトル</label>
-            <%= f.text_field :title, class:"form-control", placeholder: "アンケートのタイトルを入力ください。" %>
-          </div>
-
-           <div class="form-group mb-4">
-            <label>期限</label>
-            <%= f.text_field :limit, class:"form-control", readonly:true, id:"dp1" %>
-          </div>
-
-           <div class="form-group mb-3">
-            <label>概要</label>
-            <%= f.text_area :content, class:"form-control", rows:5, placeholder: "アンケートの概要を入力ください。" %>
-           </div>
-
-            <div class="form-group mb-3">
-            <label>地域</label>
-            <%= f.select :area, area_list, {}, class:"form-control" %>
-           </div>
-
-           <div>
-             <%= f.submit "追加", class:"btn btn-primary btn-block" %>
-           </div>
-          
-        <% end %>
-      </div>
+    <div class="form-parts">
+      <label>タイトル</label>
+      <%= f.text_field :title, placeholder: "アンケートのタイトルを入力ください。" %>
     </div>
-  </div>
+
+    <div class="form-parts">
+      <label>期限</label>
+      <%= f.text_field :limit, readonly:true, id:"dp1" %>
+  　</div>
+
+      <div class="form-group mb-3">
+      <label>概要</label>
+      <%= f.text_area :content, rows:5, placeholder: "アンケートの概要を入力ください。" %>
+      </div>
+
+      <div class="form-parts">
+      <label>地域</label>
+      <%= f.select :area, area_list %>
+      </div>
+
+      <div>
+        <%= f.submit "追加" %>
+      </div>
+  <% end %>
 </div>

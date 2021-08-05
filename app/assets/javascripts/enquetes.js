@@ -40,6 +40,7 @@ document.addEventListener("turbolinks:load",function(){
     });
 
     //表示設定
+    $('#dp1').css("width","calc( 4/5*100%");
     $("#dp1").datepicker();
     $("#dp2").datepicker();
     $("#dp3").datepicker();

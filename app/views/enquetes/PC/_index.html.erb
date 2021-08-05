@@ -38,7 +38,7 @@
 
         <td>
           <%= link_to result_path(enquete.id),
-              class:"questin-delete a" do %>
+              class:"enquete-result" do %>
            <%= icon("fas", "file") %>結果
           <% end %>
         </td>
@@ -46,24 +46,28 @@
       </tr>
       <tr id="enquete-question-<%= enquete.id %>" class="tr-questions">
         <td colspan="4" class="hidden-td">
-          <%= link_to "質問追加", question_path(enquete), class:"add-question" %>
+          <%= link_to question_path(enquete), class:"add-question" do %>
+             <%= icon("fas", "plus") %>新規追加
+          <% end %>
           <ul>
             <% enquete.questions.each do |question| %>
              <li id="enquete-question-li-<%= question.id %>">Q.<%= question.content %></li>
              <div class="hidden-buttons">
-               <%= link_to "内容確認", 
-                  show_modal_question_path(question),
+               <%= link_to show_modal_question_path(question),
                   remote:true, 
-                  id: "question-modal-confirm-#{question.id}"
+                  id: "question-modal-confirm-#{question.id}" do
                %>
-              <%= link_to "削除",
-                  delete_question_path(question),
+                 <%= icon("fas", "search") %>内容確認
+               <% end %>
+              <%= link_to delete_question_path(question),
                   data:{ confirm: "削除しますか？"},
                   method: :delete,
                   remote: true,
                   class:"questin-delete",
-                  id: "question-delete-#{question.id}"
+                  id: "question-delete-#{question.id}" do
               %>
+                 <%= icon("fas", "trash-alt") %>削除
+              <% end %>
              </div>
               
             <% end %>
