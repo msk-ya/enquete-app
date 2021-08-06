@@ -9,22 +9,22 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
 
     <div class="form-parts">
-      <label>タイトル</label>
+      <label><%= icon("fab", "tumblr") %>タイトル</label>
       <%= f.text_field :title, placeholder: "アンケートのタイトルを入力ください。" %>
     </div>
 
     <div class="form-parts">
-      <label>期限</label>
+      <label><%= icon("far", "calendar-alt") %>期限</label>
       <%= f.text_field :limit, readonly:true, id:"dp1" %>
   　</div>
 
       <div class="form-group mb-3">
-      <label>概要</label>
+      <label><%= icon("fas", "pen") %>概要</label>
       <%= f.text_area :content, rows:5, placeholder: "アンケートの概要を入力ください。" %>
       </div>
 
       <div class="form-parts">
-      <label>地域</label>
+      <label><%= image_tag('/svg/area-new.svg',size:"15x15") %>地域</label>
       <%= f.select :area, area_list %>
       </div>
 
