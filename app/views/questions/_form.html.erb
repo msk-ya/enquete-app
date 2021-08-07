@@ -1,35 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="bg-info text-white p-3 text-center mb-3">
-        <div class="text-light">【アンケートタイトル】</div>
-        <div><%= @enquete.title %></div>
-      </div>
+<div class="new-question-area">
+  <div class="question-title-area">
+    <strong>【アンケートタイトル】</strong>
+    <div><%= @enquete.title %></div>
+  </div>
 
-      
+  <% if @question.errors.present? %>
+    <% @question.errors.full_messages.each do |err| %>
+      <div class="alert alert-danger"><%= err %></div>
+    <% end %>
+  <% end %>
 
-      <% if @question.errors.present? %>
-        <% @question.errors.full_messages.each do |err| %>
-          <div class="alert alert-danger"><%= err %></div>
-        <% end %>
-      <% end %>
+  <div class="new-question-area">
+    <%= form_with model: @question, local: true do |f| %>
 
-      <div class="p-5 bg-light shadow">
-        <%= form_with model: @question, local: true do |f| %>
+        <div class="form-parts">
+          <label>質問内容</label>
+          <%= f.text_area :content, rows:5, placeholder: "質問を入力ください。" %>
+        </div>
+        <%= f.hidden_field :id, value: @enquete.id %>
 
-           <div class="form-group mb-3">
-            <label>概要</label>
-            <%= f.text_area :content, class:"form-control", rows:5, placeholder: "質問を入力ください。" %>
-           </div>
-
-           <%= f.hidden_field :id, value: @enquete.id %>
-
-           <div>
-             <%= f.submit "追加", class:"btn btn-primary btn-block" %>
-           </div>
-        <% end %>
-      </div>
-    </div>
+        <div>
+          <%= f.submit "追加" %>
+        </div>
+    <% end %>
   </div>
 </div>
 

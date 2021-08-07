@@ -30,5 +30,16 @@ module EnquetesHelper
       "丹波山村"
     ]
   end
+
+  #アンケート新規登録フォーム最初のページパンクズリスト
+  def qnquete_new_form_bread
+    return "
+    <div class='bread-content'>
+      <a href= '/' >HOME</a>
+      <a href= '/enquetes/#{current_user.id}/user/index'>アンケート一覧</a>
+      新規アンケート作成
+    </div> ".html_safe
+  end
+
   
 end

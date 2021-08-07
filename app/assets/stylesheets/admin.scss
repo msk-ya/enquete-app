@@ -123,6 +123,25 @@
  }
  //折り畳みテーブルエリア終了
  //------------------------------新規登録関連 ---------------------------------------------------------
+  /*********************************アンケートフォーム最初のページ********************************************/
+ //パンクズリスト
+ .breadcrumbs-manager-new_form{
+   margin: 0 auto;
+   margin-top: 10px;
+   width: 30%;
+   .bread-content{
+      a{
+        text-decoration: none;
+      }
+      a:after{
+        content: ">";
+        margin: 0 2px;
+        color: #000;
+      }
+   }
+ }
+ //パンクズリスト終了
+
  //アンケート新規登録タイトル
  .registration-title{
    font-size: 28px;
@@ -203,7 +222,88 @@
     background-color: rgb(193, 193, 218);
    }
  }
-//------------------------------新規登録関連 ---------------------------------------------------------
+/*********************************アンケートフォーム最初のページ終了********************************************/
+/*---------------------------アンケートフォーム質問登録ページ--------------------------------------------------*/
+//タイトル
+.question_new_form-title{
+  font-size: 28px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   margin: 0 auto;
+   margin-top: 10px;
+   width: 60%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+//タイトルエリア
+.question-title-area{
+   margin: 0 auto;
+   margin-top: 10px;
+   text-align: center;
+   width: 60%;
+   background-color: #2C7CFF;
+   color: #FFF0F5;
+   padding: 20px 0;
+   border-bottom: 4px solid #A4C6FF;
+}
+//メインエリア
+.new-question-area{
+   margin: 0 auto;
+   margin-top: 20px;
+   width: 60%;
+   
+   form{
+     width: 100%;
+     background-color: #fff;
+     padding: 10px 0;
+     .form-parts{
+        width: 95%;
+        margin: 0 auto;
+        label{
+          display: block;
+          width: 18%;
+          background-color: #2C7CFF;
+          padding: 5px 0;
+          margin-top: 10px;
+          font-size: 14px;
+          color: #fff;
+        }
+        label::before{
+          content: "";
+          border-left: 4px solid red;
+          margin: 0 2px;
+        }
+        textarea{
+          width: 100%;
+          border: 1px solid #b0b0b0;
+          font-size: 14px;
+        }
+         textarea:focus{
+          border-radius: 0;
+          border: 3px solid green;
+          outline: none;
+        }
+     }
+      input[type="submit"]{
+          display: block;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          width: 80%;
+          height: 40px;
+          background-color: #009900;
+          color: #fff;
+          border: #00AA00;
+        }
+        input[type="submit"]:hover{
+          background-color: #90EE90;
+        }
+   }
+   
+}
+/*---------------------------アンケートフォーム質問登録ページ終了--------------------------------------------------*/
+//------------------------------新規登録関連終了 ---------------------------------------------------------
 
 
 
@@ -213,8 +313,9 @@
 
 
 
-/**************************************************************************************************/
+/****************************************スマホ**********************************************************/
 @media screen and ( max-width: 767px) {
+
   
   //タイトル
   .manager_list_title{
@@ -330,6 +431,29 @@
  }
  //折り畳みテーブルエリア終了
  //------------------------------新規登録関連 ---------------------------------------------------------
+ /*********************************アンケートフォーム最初のページ********************************************/
+ //パンクズリスト
+ .breadcrumbs-manager-new_form{
+   margin: 0 auto;
+   margin-top: 10px;
+   width: 50%;
+   .bread-content{
+      display: block;
+      margin-bottom: 28px;
+      a{
+        display: block;
+        text-decoration: none;
+        padding: 0;
+        color: red;
+      }
+      a:after{
+        content: ">";
+        margin: 0 2px;
+        color: #000;
+      }
+    }
+ }
+ //パンクズリスト終了
  //新規アンケートのエリア
  .new-enquete-area{
    width: 100%;
@@ -398,6 +522,13 @@
     background-color: rgb(193, 193, 218);
    }
  }
+ /*********************************アンケートフォーム最初のページ********************************************/
+ /*---------------------------アンケートフォーム質問登録ページ--------------------------------------------------*/
+
+/*---------------------------アンケートフォーム質問登録ページ終了--------------------------------------------------*/
+
+
+
 //------------------------------新規登録関連 ---------------------------------------------------------
 }
 /*********************************************スマホ終了************************************************************************************/
