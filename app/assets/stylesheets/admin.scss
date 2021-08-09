@@ -303,6 +303,66 @@
    
 }
 /*---------------------------アンケートフォーム質問登録ページ終了--------------------------------------------------*/
+/*****************************アンケート新規選択肢登録ページ**********************************/
+//タイトル
+.form_new_form-title{
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+//タイトル、質問
+.new-form-select-area{
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #FFA07A;
+  padding: 20px 0 5px 0;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 5px solid #B8860B;
+  color: #FAF0E6;
+  div{
+    margin-bottom: 10px;
+  }
+  div span{
+    color: #007700;
+  }
+}
+//フォームタイプ選択
+.select-type-area{
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  border: 2px solid #E6E6FA;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  fieldset{
+    border: 1px double #c0c0c0;
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: left;
+    div{
+      margin: 8px 0;
+      label{
+      font-weight: 200;
+     }
+    }
+  }
+}
+//フォーム本体
+.form-select-area{
+   width: 45%;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   background-color: #FFF;
+   border: 2px solid #E6E6FA;
+   padding: 20px;
+}
+
+/*****************************アンケート新規選択肢登録ページ終了**********************************/
 //------------------------------新規登録関連終了 ---------------------------------------------------------
 
 
@@ -313,7 +373,16 @@
 
 
 
-/****************************************スマホ**********************************************************/
+/*[***************************************スマホ**************************************************************************************/
+/***********************************************************************************************************************************]*/
+/*
+*
+*
+*
+*
+*
+*/
+
 @media screen and ( max-width: 767px) {
 
   
@@ -524,9 +593,125 @@
  }
  /*********************************アンケートフォーム最初のページ********************************************/
  /*---------------------------アンケートフォーム質問登録ページ--------------------------------------------------*/
-
+   //タイトル
+.question_new_form-title{
+  font-size: 20px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: center;
+   margin: 0 auto;
+   margin-top: 10px;
+   width: 100%;
+   display: block;
+}
+//タイトルエリア
+.question-title-area{
+   margin: 0;
+   margin-top: 10px;
+   text-align: center;
+   width: 100%;
+   padding: 20px 0;
+   border-bottom: 4px solid #A4C6FF;
+}
+//メインエリア
+.new-question-area{
+   margin: 0;
+   margin-top: 20px;
+   width: 100%;
+   
+   form{
+     width: 100%;
+     background-color: #fff;
+     padding: 10px 0;
+     .form-parts{
+        width: 95%;
+        margin: 0 auto;
+        label{
+          display: block;
+          width: 100%;
+          background-color: #2C7CFF;
+          padding: 5px 0;
+          margin-top: 10px;
+          font-size: 14px;
+          color: #fff;
+        }
+        label::before{
+          content: "";
+          border-left: 4px solid red;
+          margin: 0 2px;
+        }
+        textarea{
+          width: 100%;
+          border: 1px solid #b0b0b0;
+          font-size: 14px;
+        }
+         textarea:focus{
+          border-radius: 0;
+          border: 3px solid green;
+          outline: none;
+        }
+     }
+      input[type="submit"]{
+          display: block;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          width: 90%;
+          height: 60px;
+          background-color: #009900;
+          color: #fff;
+          border: #00AA00;
+        }
+        input[type="submit"]:hover{
+          background-color: #90EE90;
+        }
+   }
+   
+}
 /*---------------------------アンケートフォーム質問登録ページ終了--------------------------------------------------*/
+/*****************************アンケート新規選択肢登録ページ**********************************/
 
+//タイトル、質問
+.new-form-select-area{
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  
+}
+//フォームタイプ選択
+.select-type-area{
+  width: 100%;
+  margin: 0;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  border: 2px solid #E6E6FA;
+  padding: 20px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px;
+  fieldset{
+    border: 1px double #c0c0c0;
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    text-align: left;
+    div{
+      margin: 8px 0;
+      label{
+      font-weight: 200;
+     }
+    }
+  }
+}
+//フォーム本体
+.form-select-area{
+   width: 100%;
+   margin: 0;
+   margin-bottom: 30px;
+   background-color: #FFF;
+   border: 2px solid #E6E6FA;
+   padding: 20px;
+}
+/*****************************アンケート新規選択肢登録ページ終了**********************************/
 
 
 //------------------------------新規登録関連 ---------------------------------------------------------
