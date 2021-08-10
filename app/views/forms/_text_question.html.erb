@@ -1,8 +1,8 @@
  <%= form_with model: @form, local: true do |f| %>
   <%= f.hidden_field :id, value: @question.id %>
   <p>補足説明を入力してください。</p>
-  <div class="form-group">
-    <%= f.text_field :content, rows:5, class: "form-control" %>
+  <div>
+    <%= f.text_field :content,placeholder:"(*任意です。)" %>
   </div>
-  <%= f.submit "登録",class: "btn btn-primary w-100 mt-3" %>
+  <%= f.submit "登録" %>
 <% end %>

@@ -14,7 +14,9 @@
 
     <% if user_signed_in? %>
       <li>
-        <%= link_to "アンケート管理", enquetes_user_index_path(current_user)  %>
+        <%= link_to enquetes_user_index_path(current_user) do %>
+          <%= icon("fas", "user-cog") %>アンケート管理
+        <% end %>
       </li>
     <% end %>
 
@@ -24,10 +26,16 @@
     <% if user_signed_in? %>
         <li>
           <span><%= image_tag("/user.svg",size:"15x15",style:"background:#fff") %><%= current_user.name %></span>&emsp;
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+             <%= icon("fas", "sign-out-alt") %>ログアウト
+          <% end %>
       </li>
     <% else %>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <%= icon("fas", "sign-in-alt") %>ログイン
+          <% end %>
+        </li>
     <% end %>
  </ul>
   

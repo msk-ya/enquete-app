@@ -28,7 +28,9 @@
           <!-- ログイン専用 -->
           <% if user_signed_in? %>
             <li class="li">
-              <%= link_to "アンケート管理", enquetes_user_index_path(current_user)  %>
+               <%= link_to enquetes_user_index_path(current_user) do %>
+                <%= icon("fas", "user-cog") %>アンケート管理
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -36,10 +38,14 @@
         <ul class="header-right">
           <% if user_signed_in? %>
               <li>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"log_out" %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= icon("fas", "sign-out-alt") %>ログアウト
+                <% end %>
               </li>
           <% else %>
-              <li><%= link_to "ログイン", new_user_session_path, class:"log_in" %></li>
+              <%= link_to new_user_session_path do %>
+               <%= icon("fas", "sign-in-alt") %>ログイン
+              <% end %>
           <% end %>
        </ul>
   
