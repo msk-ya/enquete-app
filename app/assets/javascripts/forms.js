@@ -10,8 +10,10 @@ document.addEventListener("turbolinks:load",function(){
   
   var selectChildCount = selectForm.childElementCount;                      //選択式型のフォームの子要素の総数
   var selectIdNumber = selectChildCount / 2 - 1;                            //子要素総数のラベル分を排除し0カウントから始まるので-1する。
-  
-  
+
+  var backAdminList = document.getElementById('back-admin-list');           //新規作成時戻るボタン
+
+
   //プラスボタンの処理
   selectAddButton.addEventListener('click',function(){                      
     pushCount ++;
@@ -33,7 +35,6 @@ document.addEventListener("turbolinks:load",function(){
   })
   //マイナスボタンの処理
   selectDeleteButton.addEventListener("click",function(){
-    alert(selectChildCount);
     if (selectChildCount > 4){
       var deletelabel = document.getElementById("label" + pushCount);
       deletelabel.remove();
@@ -60,3 +61,12 @@ document.addEventListener("turbolinks:load",function(){
     selectArea.style.display = "block";
   });
 });
+
+ //新規作成時一覧リストに戻る
+function backAdminLists(id){
+  var result = confirm('アンケート一覧に戻ります。未作成の場合アンケートが破棄されます。よろしいですか？');
+  if (result) {
+    document.location = `http://localhost:3000/enquetes/${id}/user/index`;
+  }
+}
+

@@ -7,8 +7,6 @@ document.addEventListener("turbolinks:load", function () {
         document.getElementById("enquete-question-li-" + id ).style.display = "none";
         btn.style.display = "none";
 
-        
-
       })
     })
   });
