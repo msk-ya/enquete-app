@@ -72,10 +72,12 @@ function backAdminLists(id, question){
       dataType: 'json',
       data: {user_id: id, question_id: question },
       timeout: 3000,
+    }).done(function (data) {
+      document.location = `hhttps://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-      alert("キャンセルしました。");
+      alert("error");
     });
-    document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
+
    
   }
 }
