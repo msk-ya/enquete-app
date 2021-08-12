@@ -73,6 +73,7 @@ function backAdminLists(id, question){
       data: {user_id: id, question_id: question },
       timeout: 3000,
     }).done(function (data) {
+      alert('キャンセルしました。');
       document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
       document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
