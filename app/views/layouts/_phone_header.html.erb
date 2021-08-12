@@ -37,15 +37,17 @@
 
         <ul class="header-right">
           <% if user_signed_in? %>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
+              <li class="session_button-out">
+                <%= link_to destroy_user_session_path, method: :delete, style:"color:white;" do %>
                   <%= icon("fas", "sign-out-alt") %>ログアウト
                 <% end %>
               </li>
           <% else %>
-              <%= link_to new_user_session_path do %>
-               <%= icon("fas", "sign-in-alt") %>ログイン
-              <% end %>
+              <li class="session_button-in">
+                 <%= link_to new_user_session_path, style:"color:blue;" do %>
+                  <%= icon("fas", "sign-in-alt") %>ログイン
+                 <% end %>
+              </li>
           <% end %>
        </ul>
   
