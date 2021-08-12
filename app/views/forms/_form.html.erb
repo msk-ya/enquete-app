@@ -17,10 +17,10 @@
   <!-- 内容 -->
 <div class="form-select-area">
   <div id="edit-question-area">
-    <%= render "text_question"%>
+    <%= render "text_question", {question: @question} %>
   </div>
 
   <div id="select-question-area">
-    <%= render "select_question" %>
+    <%= render "select_question", {question: @question} %>
   </div>
 </div>

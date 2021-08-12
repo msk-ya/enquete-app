@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
+  protect_from_forgery :except => [:cancel]
 
   def new
     @question = Question.new
@@ -27,6 +28,16 @@ class QuestionsController < ApplicationController
     @question = Question.find( params[:id] )
     @forms = @question.forms
   end
+
+
+#途中で作成を取りやめた場合のキャンセル
+  def cancel
+     @question = Question.find(params[:question_id])
+     @enquete = @question.enquete
+     @question.destroy
+     @enquete.destroy
+  end
+  
   
 
   private

@@ -16,5 +16,5 @@
    </div>
 </div>
 <%= f.submit "登録" %>
-<button id="back-admin-list" onclick="backAdminLists(<%= current_user.id %>)">戻る</button>
 <% end %>
+<button id="back-admin-list" onclick="backAdminLists(<%= current_user.id %>, <%= question.id %>)">戻る</button>

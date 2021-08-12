@@ -63,10 +63,20 @@ document.addEventListener("turbolinks:load",function(){
 });
 
  //新規作成時一覧リストに戻る
-function backAdminLists(id){
+function backAdminLists(id, question){
   var result = confirm('アンケート一覧に戻ります。未作成の場合アンケートが破棄されます。よろしいですか？');
   if (result) {
-    document.location = `http://localhost:3000/enquetes/${id}/user/index`;
+    $.ajax({
+      url: "https://yamanasi-enquete.herokuapp.com/questions/cancel",
+      type: 'POST',
+      dataType: 'json',
+      data: {user_id: id, question_id: question },
+      timeout: 3000,
+    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+      alert("キャンセルしました。");
+    });
+    document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
+   
   }
 }
 

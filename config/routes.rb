@@ -17,11 +17,6 @@ Rails.application.routes.draw do
   end
   
 
-
-
-
-
- 
   resources :forms, only:[:create] do
     member do
       get 'new'
@@ -35,6 +30,7 @@ Rails.application.routes.draw do
      get "show_modal"
      delete :delete
     end
+    post :cancel, on: :collection
     resources :forms, only:[:edit] do
       member do
         get :action
