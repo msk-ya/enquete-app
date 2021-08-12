@@ -76,6 +76,7 @@ function backAdminLists(id, question){
       alert('キャンセルしました。');
       document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+      alert('キャンセルしました。');
       document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     });
 
