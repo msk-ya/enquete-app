@@ -36,6 +36,7 @@ class QuestionsController < ApplicationController
      @enquete = @question.enquete
      @question.destroy
      @enquete.destroy
+     redirect_to root_path
   end
   
   
