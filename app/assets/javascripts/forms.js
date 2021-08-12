@@ -75,7 +75,7 @@ function backAdminLists(id, question){
     }).done(function (data) {
       document.location = `hhttps://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-      alert("error");
+      document.location = `hhttps://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
     });
 
    
