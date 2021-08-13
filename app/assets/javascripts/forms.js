@@ -67,17 +67,17 @@ function backAdminLists(id, question){
   var result = confirm('アンケート一覧に戻ります。未作成の場合アンケートが破棄されます。よろしいですか？');
   if (result) {
     $.ajax({
-      url: "https://yamanasi-enquete.herokuapp.com/questions/cancel",
+      url: "/questions/cancel",
       type: 'POST',
       dataType: 'json',
       data: {user_id: id, question_id: question },
       timeout: 3000,
     }).done(function (data) {
       alert('キャンセルしました。');
-      document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
+      document.location = `/enquetes/${id}/user/index`;
     }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
       alert('キャンセルしました。');
-      document.location = `https://yamanasi-enquete.herokuapp.com/enquetes/${id}/user/index`;
+      document.location = `/enquetes/${id}/user/index`;
     });
 
    

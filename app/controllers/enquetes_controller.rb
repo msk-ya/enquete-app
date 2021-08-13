@@ -1,5 +1,6 @@
 class EnquetesController < ApplicationController
   before_action :set_enquete, only: %i[ show edit update destroy ]
+  protect_from_forgery :except => [:cancel]
 
   
   def index
@@ -64,6 +65,13 @@ class EnquetesController < ApplicationController
   def answer
     debugger
   end
+
+#作成時キャンセル処理
+  def cancel
+    @enquete = Enquete.find( params[:enquete_id] )
+    @enquete.destroy
+  end
+  
   
   
 

@@ -23,11 +23,12 @@
           <%= f.submit "追加" %>
         </div>
     <% end %>
+    <button id="back-admin-list" onclick="cancelEnquete(<%= current_user.id %>, <%= enquete.id %>)">戻る</button>
+    <% if @enquete.question_count? %>
+      <div>
+        <%= link_to '質問追加終了する', enquetes_user_index_path(current_user) %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<% if @enquete.question_count? %>
- <div class="ml-2">
- <%= link_to '質問追加終了する', enquetes_path, class:"btn btn-primary text-white" %>
- </div>
-<% end %>

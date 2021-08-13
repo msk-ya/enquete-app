@@ -47,3 +47,24 @@ document.addEventListener("turbolinks:load",function(){
 
   });
 });
+//質問登録時のキャンセル処理
+function cancelEnquete(id, enquete){
+  var result = confirm('アンケート一覧に戻ります。未作成の場合アンケートが破棄されます。よろしいですか？');
+  if (result) {
+    $.ajax({
+      url: "/enquetes/cancel",
+      type: 'POST',
+      dataType: 'json',
+      data: { user_id: id, enquete_id: enquete },
+      timeout: 3000,
+    }).done(function (data) {
+      alert('キャンセルしました。');
+      document.location = `/enquetes/${id}/user/index`;
+    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+      alert('キャンセルしました。');
+      document.location = `/enquetes/${id}/user/index`;
+    });
+
+
+  }
+}

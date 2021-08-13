@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   
   resources :results, only:[:create, :show]
   resources :enquetes, except: [:index] do
+    post :cancel, on: :collection
     resources :results, only: [:delete] do
       get :new, on: :collection
     end
