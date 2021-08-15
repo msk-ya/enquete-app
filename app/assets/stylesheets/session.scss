@@ -9,16 +9,41 @@
 .login_main{
   border-radius: 6px;
   width: 30%;
-  background-color: #fff;
+  background-color: #f9f9f9;
   margin: 0 auto;
   margin-top: 20px;
   padding: 2% 5%;
+  border: 1px solid #a0a0a0;
+  /*新規会員時のエラーメッセージ*/
+    #error_explanation{
+      width: 100%;
+      padding: 15px 10px;
+      margin: 0;
+      background-color: #f9f9f9;
+      h2{
+        font-size: 12px;
+        background-color: red;
+        color: white;
+        border: 1px double #c0c0c0;
+        padding: 10px; 
+        width: 100%;
+      }
+      ul{
+          list-style: none;
+          li{
+            color: red;
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
+    }
   .field{
     width: 100%;
     margin-bottom: 40px;
     label{
       margin-bottom: 6px;
       font-size: 12px;
+      font-weight: bold;
     }
     em, span{
       font-size: 12px;
@@ -27,7 +52,8 @@
       display: block;
       width: 100%;
       border-color: 1px solid #f0f0f0;
-      font-size: 12px;
+      font-size: 14px;
+      padding: 2px 0;
     }
     span{
       color: red;
@@ -37,6 +63,8 @@
   .field_check{
     margin-top: -30px;
     margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: bold;
   }
   .actions{
     width: 100%;
@@ -47,14 +75,31 @@
       background-color: rgb(43, 200, 43);
       border: none;
       color: #fff;
-      padding: 8px 0;
+      padding: 12px 0;
+      font-size: 12px;
     }
     input:hover{
      background-color: rgb(108, 222, 108);
     }
+    a{
+      display: block;
+      width: 100%;
+      background-color: #fffffe;
+      border: 1px solid #b0b0b0;
+      color: rgb(52, 52, 223);
+      text-decoration: none;
+      text-align: center;
+      margin: 7px 0;
+      padding: 8px 0;
+      font-size: 12px;
+    }
+    a:hover{
+      background-color: #f1f1f1;
+    }
   
   }
 }
+
 
 @media screen and (max-width: 767px) {
   .login_title{
@@ -65,6 +110,7 @@
   .login_main{
      width: 100%;
      background-color: #f0f0f0;
+     border: none;
      .actions{
        width: 90%;
        margin-left: 5%;
