@@ -63,6 +63,7 @@ RSpec.describe "Sessions", type: :system do
        fill_in "user[password_confirmation]",	with: "password" 
        click_on "登録"
        expect(page).to have_content "上野　三郎" 
+       expect(page).to have_content "アンケート管理" 
      end
      
    end
