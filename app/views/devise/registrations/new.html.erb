@@ -1,5 +1,7 @@
 <div class="login_title">
-  <h2>新規メンバー登録</h2>
+  <h2>
+     <%= icon("fas", "user-edit") %>新規メンバー登録
+  </h2>
 </div>
 
 
@@ -9,12 +11,12 @@
 
      <div class="field">
       <%= f.label "名前" %><span>(必須です。)</span><br />
-      <%= f.text_field :name, autocomplete: "name", placeholder:"(例)山田　太郎" %>
+      <%= f.text_field :name, autocomplete: "name", placeholder:"\uf2bd (例)山田　太郎",class:"fa" %>
     </div>
 
     <div class="field">
       <%= f.label :email %><span>(必須です。)</span><br />
-      <%= f.email_field :email, autocomplete: "email", placeholder:"(例)sample@example.com" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder:"\uf0e0 (例)sample@example.com",class:"fa" %>
     </div>
 
     <div class="field">
@@ -23,16 +25,16 @@
       <em>(<%= @minimum_password_length %> 文字以上で入力ください。)</em><br>
       <span>(必須です。)</span>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", placeholder:"必須です。" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"\uf084 (例)password",class:"fa" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation %><span>(必須です。)</span><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"必須です。" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"\uf084\uf058 (例)password",class:"fa" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "登録" %>
+      <%= f.submit "\uf304 登録",class:"fa" %>
     </div>
   <% end %>
 

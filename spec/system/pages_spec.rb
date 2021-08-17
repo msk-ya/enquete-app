@@ -51,6 +51,32 @@ RSpec.describe "Pages", type: :system do
       expect(page).to have_content "受付中" 
       expect(page).to have_content "終了"
     end
+
+    it '新規アンケートページの検証' do
+      visit recently_pages_path
+      expect(page).to have_content "休暇について" 
+    end
+
+    it "地域別アンケートの検証" do
+      visit area_pages_path
+
+      #山梨全域が表示されるか？(データ二つあり)
+       expect(page).to have_content "【山梨全域エリアアンケート】" 
+       expect(page).to have_content "休暇について"
+       expect(page).to have_content "調査"
+
+      #甲府市の検証(データ一つのみ)
+      visit area_pages_path(params:{area: "甲府市"})
+      expect(page).to have_content "【甲府市エリアアンケート】" 
+      expect(page).to have_content "休暇について"
+      expect(page).to have_no_content "調査"
+
+      #昭和町の検証(データなし)
+      visit area_pages_path(params:{area: "昭和町"})
+      expect(page).to have_content "【昭和町エリアアンケート】" 
+      expect(page).to have_content "まだアンケートがありません。"
+    end
+    
     
   end
   #*****************アンケートメインページend***************
