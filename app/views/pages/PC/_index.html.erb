@@ -32,9 +32,7 @@
         <td><%= l enquete.created_at, format: :day %></td>
         <td><%= l enquete.limit, format: :default %></td>
         <td>
-          <%= link_to  enquete_results_path(enquete), class: "enquete-answer-button" do %>
-           <%= image_tag("/svg/write_white.svg",size:"20x20",style:"color:white")%>アンケートに答える
-          <% end %>
+          <%= enquete.answer_button_existence %>
         </td>
        </tr>
       <% end %>
