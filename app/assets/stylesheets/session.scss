@@ -5,6 +5,17 @@
   font-size: 20px;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/*フラッシュメッセージ*/
+  .alert{
+    background-color: red;
+    margin: 0 auto;
+    width: 30%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    border: 3px double #fff;
+    padding: 5px 0;
+  }
 
 .login_main{
   border-radius: 6px;
@@ -14,6 +25,7 @@
   margin-top: 20px;
   padding: 2% 5%;
   border: 1px solid #a0a0a0;
+  
   /*新規会員時のエラーメッセージ*/
     #error_explanation{
       width: 100%;
@@ -101,11 +113,16 @@
 }
 
 
+
 @media screen and (max-width: 767px) {
   .login_title{
     margin: 0;
     margin-top: 10px;
     }
+  /*フラッシュメッセージ*/
+  .alert{
+    width: 100%;
+  }
 
   .login_main{
      width: 100%;

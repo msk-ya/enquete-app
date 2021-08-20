@@ -22,6 +22,13 @@ RSpec.describe "Sessions", type: :system do
       click_on "ログインする"
        expect(page).to have_content "渡辺　次郎" 
     end
+     it "ログイン失敗" do
+      visit new_user_session_path
+      fill_in "user[email]",	with: "watanabe@example.com" 
+      fill_in "user[password]",	with: "batpass"
+      click_on "ログインする"
+       expect(page).to have_content "メールアドレスまたはパスワードが違います。" 
+    end
   end
    #********************************************
    describe "新規会員登録" do
@@ -65,11 +72,13 @@ RSpec.describe "Sessions", type: :system do
        expect(page).to have_content "上野　三郎" 
        expect(page).to have_content "アンケート管理" 
      end
-     
    end
-   
-
-  
-
-  
+   #***************************************************************
+    describe "未ログイン時アンケート一覧ページからリダイレクトする" do
+      it 'リダイレクトする' do
+         visit enquetes_user_index_path(1)
+         expect(page).to have_content "アカウント登録もしくはログインしてください。"
+      end
+     
+    end
 end

@@ -1,4 +1,11 @@
 <div class="login_title">
+  <% flash.each do |k,v| %>
+    <div class="alert">
+       <%= icon('fas', 'exclamation-triangle')%>
+       <%= v %>
+    </div>
+  <% end %>
+
   <h2>
     <%= icon("fas", "unlock-alt") %>ログイン
   </h2>
