@@ -42,12 +42,13 @@ Rails.application.routes.draw do
   end
   
   resources :results, only:[:create, :show]
-  resources :enquetes, except: [:index] do
+  resources :enquetes, except: [:index,:show] do
     post :cancel, on: :collection
     resources :results, only: [:delete] do
       get :new, on: :collection
     end
   end
   get "/enquetes/:user_id/user/index", to: "enquetes#index", as: :enquetes_user_index
-  
+  get 'enquetes/icon.jpg',to:"enquetes#img"
+  get '/icon.jpg',to:"pages#img"
 end

@@ -14,7 +14,7 @@ module EnqueteDecorator
   def answer_button_existence
     today = Date.today
     if self.limit >today
-      return "<a herf='enquetes/#{self.id}/results' class='enquete-answer-button'>
+      return "<a href='enquetes/#{self.id}/results' class='enquete-answer-button'>
                <img src='/svg/write_white.svg' width='20' height='20' style='color:white' />アンケートに答える
               </a>".html_safe
     else

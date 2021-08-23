@@ -7,20 +7,8 @@ class EnquetesController < ApplicationController
     @enquetes = current_user.enquetes
   end
 
-  def show
-     @enquete = Enquete.find( params[:id] )
-     @enquete.enquete_aggregate
-    
-  end
-
-  
   def new
     @enquete = Enquete.new
-    if params[ :user_id ]
-      @user = User.find( params[:user_id] )
-    else
-      redirect_to root_path, notice: "ログインしてご利用ください。"
-    end
   end
 
  
@@ -72,13 +60,22 @@ class EnquetesController < ApplicationController
     @enquete.destroy
   end
   
-  
-  
+  #def show
+     #@enquete = Enquete.find( params[:id] )
+     #@enquete.enquete_aggregate
+  #end
+
+
+  #取り敢えず新規アンケートページのicon.jpgのルーティングエラー対策
+  def img
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_enquete
-      @enquete = Enquete.find(params[:id])
+      unless params[:id] =="icon"
+        @enquete = Enquete.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.

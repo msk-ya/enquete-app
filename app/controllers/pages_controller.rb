@@ -36,6 +36,11 @@ class PagesController < ApplicationController
   def recently
     @newEnquetes = Enquete::search_new_enquete
   end
+
+  #取り敢えず新規アンケートページのicon.jpgのルーティングエラー対策
+  def img
+  end
+  
   
   
 end

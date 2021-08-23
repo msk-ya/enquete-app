@@ -7,7 +7,7 @@
   <%= link_to root_path do %>
      <%= icon("fas", "home") %>HOMEへ
   <% end %>&nbsp;
-  <%= link_to new_enquete_path(params:{user_id:current_user.id}) do %>
+  <%= link_to new_enquete_path, class:"new-enquete-link" do %>
      <%= icon("fas", "plus") %>新規登録
   <% end %>
 </div>
